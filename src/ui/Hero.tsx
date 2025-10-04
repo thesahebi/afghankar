@@ -12,7 +12,7 @@ interface HeroProps {
   secondaryCtaText?: string
   secondaryCtaLink?: string
   background?: 'gradient' | 'primary' | 'white'
-  stats?: Array<{ number: string; label: string }>
+  stats?: Array<{ number: string; label: string; icon?: string }>
 }
 
 const Hero: React.FC<HeroProps> = ({
@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({
   stats = []
 }) => {
   const backgroundClasses = {
-    gradient: 'bg-gradient-to-br from-white to-gray-50',
+    gradient: 'bg-gradient-to-br from-primary to-primary-dark text-white',
     primary: 'bg-primary text-white',
     white: 'bg-white'
   }
@@ -73,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight"
           >
             {headline}
           </motion.h1>
@@ -82,7 +82,7 @@ const Hero: React.FC<HeroProps> = ({
           {subheadline && (
             <motion.h2
               variants={itemVariants}
-              className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 text-primary leading-relaxed"
+              className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 text-white/90 leading-relaxed"
             >
               {subheadline}
             </motion.h2>
@@ -92,7 +92,7 @@ const Hero: React.FC<HeroProps> = ({
           {description && (
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
+              className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed"
             >
               {description}
             </motion.p>
@@ -134,10 +134,13 @@ const Hero: React.FC<HeroProps> = ({
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                  {stat.icon && (
+                    <div className="text-3xl mb-2">{stat.icon}</div>
+                  )}
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-sm md:text-base text-gray-600">
+                  <div className="text-sm md:text-base text-white/80">
                     {stat.label}
                   </div>
                 </motion.div>

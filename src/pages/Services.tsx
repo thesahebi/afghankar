@@ -103,12 +103,12 @@ const Services: React.FC = () => {
 
   return (
     <>
-      <Section className="bg-primary text-white py-20 md:py-24 text-center">
+      <Section className="bg-primary text-white py-16 md:py-20 lg:py-24 text-center">
         <motion.h1
           initial="hidden"
           animate="visible"
           variants={fadeInVariants}
-          className="text-5xl md:text-6xl font-bold mb-4"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
         >
           خدمات ما
         </motion.h1>
@@ -117,42 +117,43 @@ const Services: React.FC = () => {
           animate="visible"
           variants={fadeInVariants}
           transition={{ delay: 0.2 }}
-          className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90"
+          className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto text-white/90"
         >
           راه‌حل‌های جامع فناوری اطلاعات برای رشد کسب و کار شما
         </motion.p>
       </Section>
 
-      <Section className="bg-white py-20">
+      <Section className="bg-white py-16 md:py-20 lg:py-24">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={staggerContainerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
           {services.map((service, index) => (
             <motion.div variants={fadeInVariants} key={index}>
-              <Card className="h-full flex flex-col">
-                <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-3xl mx-auto mb-6 shadow-md">
+              <Card className="h-full flex flex-col p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl md:text-4xl mx-auto mb-6 shadow-lg">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">
+                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4 text-center">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-6 text-center flex-grow">
+                <p className="text-gray-600 mb-6 text-center flex-grow text-sm md:text-base leading-relaxed">
                   {service.description}
                 </p>
                 <ul className="text-sm text-gray-600 text-right space-y-2 mb-6">
                   {service.features.map((feature, i) => (
                     <li key={i} className="flex items-center justify-end">
-                      <span className="ml-2 text-primary">✔</span> {feature}
+                      <span className="ml-2 text-primary text-lg">✔</span> 
+                      <span className="text-xs md:text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="mt-auto">
                   <div className="text-center mb-4">
-                    <span className="text-2xl font-bold text-primary">{service.price}</span>
+                    <span className="text-xl md:text-2xl font-bold text-primary">{service.price}</span>
                   </div>
                   <Button variant="primary" size="md" className="w-full" href="/contact">
                     درخواست مشاوره
@@ -164,7 +165,7 @@ const Services: React.FC = () => {
         </motion.div>
       </Section>
 
-      <Section className="bg-gray-50 py-20">
+      <Section className="bg-gray-50 py-16 md:py-20 lg:py-24">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -172,34 +173,34 @@ const Services: React.FC = () => {
           variants={fadeInVariants}
           className="text-center max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             چرا افغان کار را انتخاب کنید؟
           </h2>
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
             ما با تیمی از متخصصان مجرب و تجربه‌ای طولانی در ارائه خدمات فناوری اطلاعات، 
             راه‌حل‌های جامع و قابل اعتمادی را برای کسب و کارهای مختلف ارائه می‌دهیم.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl md:text-3xl mx-auto mb-4 shadow-lg">
                 🎯
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">تخصص و تجربه</h3>
-              <p className="text-gray-600">بیش از 5 سال تجربه در ارائه خدمات فناوری اطلاعات</p>
+              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">تخصص و تجربه</h3>
+              <p className="text-gray-600 text-sm md:text-base">بیش از 5 سال تجربه در ارائه خدمات فناوری اطلاعات</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl md:text-3xl mx-auto mb-4 shadow-lg">
                 🚀
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">نوآوری و کیفیت</h3>
-              <p className="text-gray-600">استفاده از جدیدترین تکنولوژی‌ها و استانداردهای صنعت</p>
+              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">نوآوری و کیفیت</h3>
+              <p className="text-gray-600 text-sm md:text-base">استفاده از جدیدترین تکنولوژی‌ها و استانداردهای صنعت</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl md:text-3xl mx-auto mb-4 shadow-lg">
                 🤝
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">پشتیبانی 24/7</h3>
-              <p className="text-gray-600">پشتیبانی مداوم و پاسخگویی سریع به نیازهای شما</p>
+              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">پشتیبانی 24/7</h3>
+              <p className="text-gray-600 text-sm md:text-base">پشتیبانی مداوم و پاسخگویی سریع به نیازهای شما</p>
             </div>
           </div>
           <Button variant="primary" size="lg" href="/contact">

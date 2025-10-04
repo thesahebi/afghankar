@@ -84,12 +84,12 @@ const Contact: React.FC = () => {
 
   return (
     <>
-      <Section className="bg-primary text-white py-20 md:py-24 text-center">
+      <Section className="bg-primary text-white py-16 md:py-20 lg:py-24 text-center">
         <motion.h1
           initial="hidden"
           animate="visible"
           variants={fadeInVariants}
-          className="text-5xl md:text-6xl font-bold mb-4"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
         >
           تماس با ما
         </motion.h1>
@@ -98,14 +98,14 @@ const Contact: React.FC = () => {
           animate="visible"
           variants={fadeInVariants}
           transition={{ delay: 0.2 }}
-          className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90"
+          className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto text-white/90"
         >
           آماده‌ایم تا به شما کمک کنیم. با ما تماس بگیرید.
         </motion.p>
       </Section>
 
-      <Section className="bg-white py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <Section className="bg-white py-16 md:py-20 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Form */}
           <motion.div
             initial="hidden"
@@ -113,8 +113,8 @@ const Contact: React.FC = () => {
             viewport={{ once: true, amount: 0.5 }}
             variants={fadeInVariants}
           >
-            <Card className="p-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">ارسال پیام</h2>
+            <Card className="p-6 md:p-8 hover:shadow-xl transition-all duration-300">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">ارسال پیام</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -230,25 +230,25 @@ const Contact: React.FC = () => {
             className="space-y-8"
           >
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">اطلاعات تماس</h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">اطلاعات تماس</h2>
+              <p className="text-base md:text-lg text-gray-600 mb-8">
                 ما آماده‌ایم تا به سوالات شما پاسخ دهیم و در مورد پروژه‌هایتان با شما صحبت کنیم. 
                 با ما تماس بگیرید تا از مشاوره رایگان ما بهره‌مند شوید.
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               {contactInfo.map((info, index) => (
                 <motion.div variants={fadeInVariants} key={index}>
-                  <Card className="p-6">
-                    <div className="flex items-start space-x-4 rtl:space-x-reverse">
-                      <div className="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center text-xl flex-shrink-0">
+                  <Card className="p-4 md:p-6 hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-start space-x-3 md:space-x-4 rtl:space-x-reverse">
+                      <div className="w-10 h-10 md:w-12 md:h-12 bg-primary text-white rounded-lg flex items-center justify-center text-lg md:text-xl flex-shrink-0">
                         {info.icon}
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-1">{info.title}</h3>
-                        <p className="text-primary font-medium mb-1">{info.details}</p>
-                        <p className="text-gray-600 text-sm">{info.description}</p>
+                        <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-1">{info.title}</h3>
+                        <p className="text-primary font-medium mb-1 text-sm md:text-base">{info.details}</p>
+                        <p className="text-gray-600 text-xs md:text-sm">{info.description}</p>
                       </div>
                     </div>
                   </Card>
@@ -257,9 +257,9 @@ const Contact: React.FC = () => {
             </div>
 
             <motion.div variants={fadeInVariants}>
-              <Card className="p-6 bg-primary text-white">
-                <h3 className="text-xl font-bold mb-4">آماده شروع هستید؟</h3>
-                <p className="mb-6 text-white/90">
+              <Card className="p-4 md:p-6 bg-primary text-white hover:shadow-2xl transition-all duration-300">
+                <h3 className="text-lg md:text-xl font-bold mb-4">آماده شروع هستید؟</h3>
+                <p className="mb-6 text-white/90 text-sm md:text-base">
                   با ما تماس بگیرید و از مشاوره رایگان ما بهره‌مند شوید. 
                   تیم ما آماده پاسخگویی به سوالات شما است.
                 </p>
