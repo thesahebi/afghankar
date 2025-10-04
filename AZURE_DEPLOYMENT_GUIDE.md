@@ -154,7 +154,7 @@ Error: robots.txt not accessible
 
 ## 🎯 Next Steps
 
-1. **Set up Azure Service Principal** and add credentials to GitHub
+1. **Add Azure Storage Account Key** to GitHub secrets
 2. **Enable Static Website** on your Azure Storage Account
 3. **Push changes** to trigger the deployment
 4. **Monitor the deployment** in GitHub Actions
@@ -166,7 +166,7 @@ Error: robots.txt not accessible
 
 If you encounter any issues:
 1. Check the GitHub Actions logs for specific error messages
-2. Verify Azure resources and permissions
+2. Verify Azure storage account and key permissions
 3. Test the build process locally
 4. Review the troubleshooting section above
 
