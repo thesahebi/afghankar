@@ -1,0 +1,70 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/about",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/services",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/contact",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/robots.txt",
+      "serve": "/robots.txt",
+      "statusCode": 200
+    },
+    {
+      "route": "/sitemap.xml",
+      "serve": "/sitemap.xml",
+      "statusCode": 200
+    },
+    {
+      "route": "/404.html",
+      "serve": "/404.html",
+      "statusCode": 404
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*.{png,jpg,jpeg,gif,svg,webp}", "/css/*", "/js/*", "/assets/*"]
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".xml": "application/xml",
+    ".txt": "text/plain",
+    ".css": "text/css",
+    ".js": "application/javascript",
+    ".html": "text/html",
+    ".svg": "image/svg+xml",
+    ".png": "image/png",
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".gif": "image/gif",
+    ".webp": "image/webp",
+    ".ico": "image/x-icon",
+    ".woff": "font/woff",
+    ".woff2": "font/woff2",
+    ".ttf": "font/ttf",
+    ".eot": "application/vnd.ms-fontobject"
+  },
+  "globalHeaders": {
+    "Cache-Control": "public, max-age=31536000, immutable"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/404.html"
+    }
+  }
+}

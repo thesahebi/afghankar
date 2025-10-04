@@ -1,0 +1,10 @@
+# Netlify redirects for SPA routing
+/*    /index.html   200
+
+# Specific redirects for better SEO
+/about/    /about    301
+/services/    /services    301
+/contact/    /contact    301
+
+# Redirect old URLs if any
+/old-page    /    301

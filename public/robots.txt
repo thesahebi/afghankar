@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://angursweb01.z13.web.core.windows.net/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all other content
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /assets/
