@@ -5,55 +5,37 @@ interface CardProps {
   children: React.ReactNode
   className?: string
   hover?: boolean
-  padding?: 'sm' | 'md' | 'lg' | 'xl'
-  shadow?: 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+  padding?: 'sm' | 'md' | 'lg'
 }
 
 const Card: React.FC<CardProps> = ({
   children,
   className = '',
   hover = true,
-  padding = 'lg',
-  shadow = 'lg'
+  padding = 'md'
 }) => {
-  const baseClasses = 'bg-white rounded-xl border border-gray-200 overflow-hidden'
+  const baseClasses = 'bg-white rounded-xl border border-gray-200 shadow-md transition-all duration-300'
   
-  const paddings = {
+  const paddingClasses = {
     sm: 'p-4',
     md: 'p-6',
-    lg: 'p-8',
-    xl: 'p-10'
+    lg: 'p-8'
   }
   
-  const shadows = {
-    sm: 'shadow-sm',
-    md: 'shadow-md',
-    lg: 'shadow-lg',
-    xl: 'shadow-xl',
-    '2xl': 'shadow-2xl'
-  }
+  const hoverClasses = hover ? 'hover:shadow-xl hover:-translate-y-1' : ''
   
-  const cardClasses = `${baseClasses} ${paddings[padding]} ${shadows[shadow]} ${className}`
-  
-  if (hover) {
-    return (
-      <motion.div
-        className={cardClasses}
-        whileHover={{ 
-          y: -8,
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
-        }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      >
-        {children}
-      </motion.div>
-    )
-  }
+  const classes = `${baseClasses} ${paddingClasses[padding]} ${hoverClasses} ${className}`
   
   return (
-    <div className={cardClasses}>
+    <motion.div
+      className={classes}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
       {children}
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,41 +1,37 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import Container from './Container'
 import Button from './Button'
 
 interface HeroProps {
-  title: string
-  subtitle?: string
+  headline: string
+  subheadline?: string
   description?: string
-  primaryButton?: {
-    text: string
-    href: string
-  }
-  secondaryButton?: {
-    text: string
-    href: string
-  }
-  background?: 'gradient' | 'primary' | 'secondary'
-  stats?: Array<{
-    number: string
-    label: string
-  }>
+  primaryCtaText?: string
+  primaryCtaLink?: string
+  secondaryCtaText?: string
+  secondaryCtaLink?: string
+  background?: 'gradient' | 'primary' | 'white'
+  stats?: Array<{ number: string; label: string }>
 }
 
 const Hero: React.FC<HeroProps> = ({
-  title,
-  subtitle,
+  headline,
+  subheadline,
   description,
-  primaryButton,
-  secondaryButton,
+  primaryCtaText = 'شروع کنید',
+  primaryCtaLink = '/contact',
+  secondaryCtaText = 'بیشتر بدانید',
+  secondaryCtaLink = '/about',
   background = 'gradient',
-  stats
+  stats = []
 }) => {
-  const backgrounds = {
-    gradient: 'bg-gradient-to-br from-primary via-primary-light to-secondary',
-    primary: 'bg-primary',
-    secondary: 'bg-secondary'
+  const backgroundClasses = {
+    gradient: 'bg-gradient-to-br from-white to-gray-50',
+    primary: 'bg-primary text-white',
+    white: 'bg-white'
   }
-
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -45,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({
       }
     }
   }
-
+  
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -53,120 +49,83 @@ const Hero: React.FC<HeroProps> = ({
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   }
-
+  
   return (
-    <section className={`relative min-h-screen flex items-center justify-center overflow-hidden ${backgrounds[background]}`}>
+    <section className={`relative min-h-screen flex items-center justify-center overflow-hidden ${backgroundClasses[background]}`}>
       
       {/* Background Animation */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full filter blur-xl"
-          animate={{
-            y: [0, -20, 0],
-            x: [0, 10, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full filter blur-xl"
-          animate={{
-            y: [0, 20, 0],
-            x: [0, -10, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
-          }}
-        />
-        <motion.div
-          className="absolute top-40 left-1/2 w-80 h-80 bg-white/5 rounded-full filter blur-xl"
-          animate={{
-            y: [0, -15, 0],
-            x: [0, 5, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 4
-          }}
-        />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <Container className="relative z-10">
         <motion.div
-          className="max-w-4xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          className="text-center max-w-4xl mx-auto"
         >
+          {/* Headline */}
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 leading-tight"
+          >
+            {headline}
+          </motion.h1>
           
-          {/* Title */}
-          <motion.div variants={itemVariants} className="mb-8">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-none mb-4 tracking-tight">
-              {title}
-            </h1>
-            {subtitle && (
-              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-white/90 leading-tight">
-                {subtitle}
-              </div>
-            )}
-          </motion.div>
-
+          {/* Subheadline */}
+          {subheadline && (
+            <motion.h2
+              variants={itemVariants}
+              className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 text-primary leading-relaxed"
+            >
+              {subheadline}
+            </motion.h2>
+          )}
+          
           {/* Description */}
           {description && (
-            <motion.p 
+            <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl lg:text-2xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed font-light"
+              className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
             >
               {description}
             </motion.p>
           )}
-
-          {/* Buttons */}
-          {(primaryButton || secondaryButton) && (
-            <motion.div 
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+          
+          {/* CTA Buttons */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+          >
+            <Button
+              variant="primary"
+              size="lg"
+              href={primaryCtaLink}
+              className="w-full sm:w-auto"
             >
-              {primaryButton && (
-                <Button 
-                  variant="accent" 
-                  size="lg"
-                  href={primaryButton.href}
-                >
-                  {primaryButton.text}
-                </Button>
-              )}
-              {secondaryButton && (
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  href={secondaryButton.href}
-                  className="border-white text-white hover:bg-white hover:text-primary"
-                >
-                  {secondaryButton.text}
-                </Button>
-              )}
-            </motion.div>
-          )}
-
+              {primaryCtaText}
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              href={secondaryCtaLink}
+              className="w-full sm:w-auto"
+            >
+              {secondaryCtaText}
+            </Button>
+          </motion.div>
+          
           {/* Stats */}
-          {stats && (
-            <motion.div 
+          {stats.length > 0 && (
+            <motion.div
               variants={itemVariants}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8"
+              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
             >
               {stats.map((stat, index) => (
                 <motion.div
@@ -175,29 +134,18 @@ const Hero: React.FC<HeroProps> = ({
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-sm text-white/80">{stat.label}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-sm md:text-base text-gray-600">
+                    {stat.label}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
           )}
         </motion.div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-          <motion.div
-            className="w-1 h-3 bg-white rounded-full mt-2"
-            animate={{ opacity: [1, 0, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-        </div>
-      </motion.div>
+      </Container>
     </section>
   )
 }

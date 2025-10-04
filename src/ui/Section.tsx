@@ -1,12 +1,11 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import Container from './Container'
 
 interface SectionProps {
   children: React.ReactNode
   className?: string
-  background?: 'white' | 'gray' | 'primary' | 'secondary' | 'gradient'
-  padding?: 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+  background?: 'white' | 'gray' | 'primary' | 'gradient'
+  padding?: 'sm' | 'md' | 'lg' | 'xl'
   id?: string
 }
 
@@ -14,42 +13,31 @@ const Section: React.FC<SectionProps> = ({
   children,
   className = '',
   background = 'white',
-  padding = 'xl',
+  padding = 'lg',
   id
 }) => {
-  const baseClasses = 'w-full'
-  
-  const backgrounds = {
+  const backgroundClasses = {
     white: 'bg-white',
     gray: 'bg-gray-50',
     primary: 'bg-primary text-white',
-    secondary: 'bg-secondary',
-    gradient: 'bg-gradient-to-br from-primary via-primary-light to-secondary'
+    gradient: 'bg-gradient-to-br from-white to-gray-50'
   }
   
-  const paddings = {
+  const paddingClasses = {
     sm: 'py-8',
     md: 'py-12',
     lg: 'py-16',
-    xl: 'py-20',
-    '2xl': 'py-24'
+    xl: 'py-20'
   }
   
-  const sectionClasses = `${baseClasses} ${backgrounds[background]} ${paddings[padding]} ${className}`
+  const classes = `${backgroundClasses[background]} ${paddingClasses[padding]} ${className}`
   
   return (
-    <motion.section
-      id={id}
-      className={sectionClasses}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6 }}
-    >
+    <section id={id} className={classes}>
       <Container>
         {children}
       </Container>
-    </motion.section>
+    </section>
   )
 }
 

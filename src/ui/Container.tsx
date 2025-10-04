@@ -3,37 +3,27 @@ import React from 'react'
 interface ContainerProps {
   children: React.ReactNode
   className?: string
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full'
-  padding?: 'sm' | 'md' | 'lg' | 'xl'
+  maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full'
 }
 
 const Container: React.FC<ContainerProps> = ({
   children,
   className = '',
-  size = 'lg',
-  padding = 'lg'
+  maxWidth = 'xl'
 }) => {
-  const baseClasses = 'mx-auto'
-  
-  const sizes = {
-    sm: 'max-w-3xl',
+  const maxWidthClasses = {
+    sm: 'max-w-2xl',
     md: 'max-w-4xl',
     lg: 'max-w-6xl',
     xl: 'max-w-7xl',
+    '2xl': 'max-w-8xl',
     full: 'max-w-full'
   }
   
-  const paddings = {
-    sm: 'px-4',
-    md: 'px-6',
-    lg: 'px-8',
-    xl: 'px-12'
-  }
-  
-  const containerClasses = `${baseClasses} ${sizes[size]} ${paddings[padding]} ${className}`
+  const classes = `mx-auto px-4 sm:px-6 lg:px-8 ${maxWidthClasses[maxWidth]} ${className}`
   
   return (
-    <div className={containerClasses}>
+    <div className={classes}>
       {children}
     </div>
   )
