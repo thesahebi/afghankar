@@ -15,7 +15,7 @@ Card/section: #1E293B
 
 Headline text: #F1F5F9
 
-Body text: #E2E8F0
+Body text: #28374bff
 
 Muted text: #94A3B8
 
