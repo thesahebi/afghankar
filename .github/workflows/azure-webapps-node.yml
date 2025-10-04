@@ -13,20 +13,38 @@ permissions:
   contents: read
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
 
-      - name: Download dist artifact
-        uses: actions/download-artifact@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          name: site-dist
-          path: dist
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
 
-      - name: Azure Login via SPN
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Copy SEO and config files
+        run: |
+          echo "Copying SEO and config files..."
+          cp ./public/robots.txt ./dist/robots.txt
+          cp ./public/sitemap.xml ./dist/sitemap.xml
+          cp ./public/404.html ./dist/404.html
+          cp ./public/staticwebapp.config.json ./dist/staticwebapp.config.json
+          cp ./public/web.config ./dist/web.config
+          cp ./public/_redirects ./dist/_redirects
+          [ -f "./staticwebapp.config.json" ] && cp ./staticwebapp.config.json ./dist/staticwebapp.config.json
+          echo "Files copied successfully!"
+
+      - name: Azure Login via Service Principal
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
@@ -35,9 +53,9 @@ jobs:
         uses: azure/cli@v1
         with:
           inlineScript: |
-            echo "Files to be deployed:"
-            ls -la ./dist/
-
+            echo "Deploying files to Azure Storage static website..."
+            
+            # Upload all files
             az storage blob upload-batch \
               --account-name ${{ env.AZURE_STORAGE_ACCOUNT_NAME }} \
               --destination '$web' \
@@ -45,7 +63,7 @@ jobs:
               --auth-mode login \
               --overwrite true
 
-            # Optional: individually upload SEO files
+            # Individually ensure SEO files and configs have correct content-type
             for file in robots.txt sitemap.xml 404.html staticwebapp.config.json web.config _redirects; do
               if [ -f "./dist/$file" ]; then
                 contentType="application/octet-stream"
@@ -56,7 +74,7 @@ jobs:
                   *.json) contentType="application/json";;
                   *.config) contentType="application/xml";;
                 esac
-                echo "Uploading $file..."
+                echo "Uploading $file with content-type $contentType..."
                 az storage blob upload \
                   --account-name ${{ env.AZURE_STORAGE_ACCOUNT_NAME }} \
                   --container-name '$web' \
@@ -68,7 +86,7 @@ jobs:
               fi
             done
 
-            echo "Verifying deployment..."
+            echo "Verifying deployed files..."
             az storage blob list \
               --account-name ${{ env.AZURE_STORAGE_ACCOUNT_NAME }} \
               --container-name '$web' \
