@@ -21,7 +21,7 @@ Muted text: #94A3B8
 
 Primary button: #3B82F6
 
-Button hover: #1d3f88ff
+Button hover: #a7b9e0ff
 
  /* logo */
 social-media-logos.html
