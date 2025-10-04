@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import Section from '../ui/Section'
 import Card from '../ui/Card'
 import Button from '../ui/Button'
+import ZivaraStyleCard from '../components/ZivaraStyleCard'
 
 const Services: React.FC = () => {
   const services = [
@@ -123,47 +124,28 @@ const Services: React.FC = () => {
         </motion.p>
       </Section>
 
-      <Section className="bg-white py-16 md:py-20 lg:py-24">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={staggerContainerVariants}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-        >
-          {services.map((service, index) => (
-            <motion.div variants={fadeInVariants} key={index}>
-              <Card className="h-full flex flex-col p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl md:text-4xl mx-auto mb-6 shadow-lg">
-                  {service.icon}
-                </div>
-                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4 text-center">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-6 text-center flex-grow text-sm md:text-base leading-relaxed">
-                  {service.description}
-                </p>
-                <ul className="text-sm text-gray-600 text-right space-y-2 mb-6">
-                  {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center justify-end">
-                      <span className="ml-2 text-primary text-lg">✔</span> 
-                      <span className="text-xs md:text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto">
-                  <div className="text-center mb-4">
-                    <span className="text-xl md:text-2xl font-bold text-primary">{service.price}</span>
-                  </div>
-                  <Button variant="primary" size="md" className="w-full" href="/contact">
-                    درخواست مشاوره
-                  </Button>
-                </div>
-              </Card>
+          <Section className="bg-white py-16 md:py-20 lg:py-24">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={staggerContainerVariants}
+              className="flex flex-col space-y-8"
+            >
+              {services.map((service, index) => (
+                <motion.div variants={fadeInVariants} key={index}>
+                  <ZivaraStyleCard
+                    icon={service.icon}
+                    title={service.title}
+                    content={service.description}
+                    bgColor="#dbeafe"
+                    iconColor="#1A73E8"
+                    features={service.features}
+                  />
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
-        </motion.div>
-      </Section>
+          </Section>
 
       <Section className="bg-gray-50 py-16 md:py-20 lg:py-24">
         <motion.div

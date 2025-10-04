@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Section from '../ui/Section'
+import ZivaraStyleCard from '../components/ZivaraStyleCard'
 
 const About: React.FC = () => {
   const fadeInVariants = {
@@ -206,33 +207,28 @@ const About: React.FC = () => {
             </p>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            {values.map((value, index) => (
-              <motion.div 
-                key={index}
-                variants={fadeInVariants}
-                className="text-center group"
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={staggerContainerVariants}
+                className="flex flex-col space-y-8"
               >
-                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    {value.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {value.description}
-                  </p>
-                </div>
+                {values.map((value, index) => (
+                  <motion.div 
+                    key={index}
+                    variants={fadeInVariants}
+                  >
+                    <ZivaraStyleCard
+                      icon={value.icon}
+                      title={value.title}
+                      content={value.description}
+                      bgColor="#dbeafe"
+                      iconColor="#1A73E8"
+                    />
+                  </motion.div>
+                ))}
               </motion.div>
-            ))}
-          </motion.div>
         </div>
       </Section>
 
