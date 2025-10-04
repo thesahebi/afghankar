@@ -1,70 +1,77 @@
-deploy:
-  runs-on: ubuntu-latest
-  needs: build
+name: Build and Deploy Afghankar.com to Azure Static Website
 
-  steps:
-    - name: Download dist artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: site-dist
-        path: dist
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
 
-    - name: Verify SEO files are present
-      run: |
-        echo "Checking for required SEO files..."
-        ls -la ./dist/
-        [ -f "./dist/robots.txt" ] && echo "✅ robots.txt found" || echo "❌ robots.txt missing"
-        [ -f "./dist/sitemap.xml" ] && echo "✅ sitemap.xml found" || echo "❌ sitemap.xml missing"
+env:
+  NODE_VERSION: '18.x'
+  AZURE_STORAGE_ACCOUNT_NAME: angursweb01
 
-    - name: Azure Login via SPN
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+permissions:
+  contents: read
 
-    - name: Deploy to Azure Static Website ($web)
-      uses: azure/cli@v1
-      with:
-        inlineScript: |
-          echo "Files to be deployed:"
-          ls -la ./dist/
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
 
-          # Deploy all files using the SPN (login auth-mode)
-          az storage blob upload-batch \
-            --account-name ${{ env.AZURE_STORAGE_ACCOUNT_NAME }} \
-            --destination '$web' \
-            --source ./dist \
-            --auth-mode login \
-            --overwrite true
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
 
-          # Optional: individually upload SEO files to ensure correct content-type
-          for file in robots.txt sitemap.xml 404.html staticwebapp.config.json web.config _redirects; do
-            if [ -f "./dist/$file" ]; then
-              contentType="application/octet-stream"
-              case $file in
-                *.txt) contentType="text/plain";;
-                *.xml) contentType="application/xml";;
-                *.html) contentType="text/html";;
-                *.json) contentType="application/json";;
-                *.config) contentType="application/xml";;
-              esac
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site-dist
+          path: dist
 
-              echo "Uploading $file..."
-              az storage blob upload \
-                --account-name ${{ env.AZURE_STORAGE_ACCOUNT_NAME }} \
-                --container-name '$web' \
-                --name $file \
-                --file ./dist/$file \
-                --content-type $contentType \
-                --auth-mode login \
-                --overwrite
-            fi
-          done
+      - name: Azure Login via SPN
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-          # Verify deployment
-          echo "Verifying deployment..."
-          az storage blob list \
-            --account-name ${{ env.AZURE_STORAGE_ACCOUNT_NAME }} \
-            --container-name '$web' \
-            --auth-mode login \
-            --query '[].{Name:name, ContentType:properties.contentSettings.contentType}' \
-            --output table
+      - name: Deploy to Azure Static Website ($web)
+        uses: azure/cli@v1
+        with:
+          inlineScript: |
+            echo "Files to be deployed:"
+            ls -la ./dist/
+
+            az storage blob upload-batch \
+              --account-name ${{ env.AZURE_STORAGE_ACCOUNT_NAME }} \
+              --destination '$web' \
+              --source ./dist \
+              --auth-mode login \
+              --overwrite true
+
+            # Optional: individually upload SEO files
+            for file in robots.txt sitemap.xml 404.html staticwebapp.config.json web.config _redirects; do
+              if [ -f "./dist/$file" ]; then
+                contentType="application/octet-stream"
+                case $file in
+                  *.txt) contentType="text/plain";;
+                  *.xml) contentType="application/xml";;
+                  *.html) contentType="text/html";;
+                  *.json) contentType="application/json";;
+                  *.config) contentType="application/xml";;
+                esac
+                echo "Uploading $file..."
+                az storage blob upload \
+                  --account-name ${{ env.AZURE_STORAGE_ACCOUNT_NAME }} \
+                  --container-name '$web' \
+                  --name $file \
+                  --file ./dist/$file \
+                  --content-type $contentType \
+                  --auth-mode login \
+                  --overwrite
+              fi
+            done
+
+            echo "Verifying deployment..."
+            az storage blob list \
+              --account-name ${{ env.AZURE_STORAGE_ACCOUNT_NAME }} \
+              --container-name '$web' \
+              --auth-mode login \
+              --query '[].{Name:name, ContentType:properties.contentSettings.contentType}' \
+              --output table
