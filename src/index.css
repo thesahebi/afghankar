@@ -47,7 +47,7 @@ body {
   font-family: 'Vazirmatn', 'Inter', 'Tahoma', 'Arial', sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
-  background: var(--bg-secondary);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -608,6 +608,33 @@ header .bg-gradient-to-r {
 
 header .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, #2563eb, #1d4ed8) !important;
+}
+
+/* Custom gradient utilities */
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops)) !important;
+}
+
+.from-blue-50 {
+  --tw-gradient-from: #eff6ff !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(239 246 255 / 0)) !important;
+}
+
+.via-blue-25 {
+  --tw-gradient-stops: var(--tw-gradient-from), #f0f9ff, var(--tw-gradient-to, rgb(240 249 255 / 0)) !important;
+}
+
+.to-white {
+  --tw-gradient-to: #ffffff !important;
+}
+
+/* Subtle blue gradient for modern effect */
+.modern-gradient {
+  background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 25%, #f8fafc 50%, #ffffff 100%) !important;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 30%, #f8fafc 60%, #ffffff 100%) !important;
 }
 
 /* Enhanced Accessibility */

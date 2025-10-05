@@ -4,11 +4,12 @@ import { ArrowLeft, Sparkles, Zap, Shield, Users } from 'lucide-react'
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white" dir="rtl">
+    <div className="min-h-screen modern-gradient" dir="rtl">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-blue-25 to-white"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-blue-50/30"></div>
         
         {/* Floating Elements */}
         <div className="absolute top-20 left-20 w-20 h-20 bg-blue-100 rounded-full opacity-60 animate-float"></div>
