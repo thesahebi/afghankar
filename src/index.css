@@ -678,3 +678,45 @@ header .bg-gradient-to-br {
     color: #000;
   }
 }
+
+/* Header text always white */
+header {
+  background-color: #2563eb !important;
+}
+
+header h1 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2)) !important;
+}
+
+header .group:hover h1 {
+  color: #e0e7ff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3)) !important;
+}
+
+header nav a {
+  color: #ffffff !important;
+}
+
+header nav a:hover {
+  color: #ffffff !important;
+}
+
+header button {
+  color: #ffffff !important;
+}
+
+/* Hero Section Blue Background */
+.hero-section {
+  background-color: #2563eb !important;
+}
+
+.hero-section * {
+  background-color: transparent !important;
+}
+
+.hero-section .absolute {
+  background-color: #2563eb !important;
+}

@@ -4,99 +4,140 @@ import { ArrowLeft, Sparkles, Zap, Shield, Users } from 'lucide-react'
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen modern-gradient" dir="rtl">
+    <div className="min-h-screen bg-blue-600" dir="rtl">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-blue-25 to-white"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-blue-50/30"></div>
+      <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-blue-600">
+        {/* Clean Blue Background */}
+        <div className="absolute inset-0 bg-blue-600" style={{backgroundColor: '#2563eb'}}></div>
         
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-20 w-20 h-20 bg-blue-100 rounded-full opacity-60 animate-float"></div>
-        <div className="absolute bottom-32 right-16 w-16 h-16 bg-indigo-100 rounded-full opacity-40 animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 right-8 w-12 h-12 bg-purple-100 rounded-full opacity-50 animate-float" style={{animationDelay: '4s'}}></div>
+        {/* Subtle Abstract Shapes */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-32 right-16 w-80 h-80 bg-white rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 right-8 w-64 h-64 bg-white rounded-full blur-xl"></div>
+        </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
-            {/* Badge */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            
+            {/* Centered Content */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium"
-            >
-              <Sparkles className="w-4 h-4 ml-2" />
-              راه‌حل‌های دیجیتال مدرن
-            </motion.div>
-
-            {/* Main Headline - Big Bold Black */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-5xl sm:text-6xl lg:text-8xl font-black text-black leading-tight tracking-tight"
+              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="space-y-8"
             >
-              کسب و کار خود را
-              <span className="block text-blue-600">
-                متحول کنید
-              </span>
-            </motion.h1>
-
-            {/* Subheadline - Gray */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-xl sm:text-2xl lg:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium"
-            >
-              ما وب‌سایت‌های مدرن، مهاجرت ابری و راه‌حل‌های شبکه‌ای ارائه می‌دهیم که به رشد و موفقیت کسب و کار شما کمک می‌کند.
-            </motion.p>
-
-            {/* CTA Button - Blue Background with White Text */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            >
-              <button className="group relative px-10 py-5 bg-blue-600 text-white font-bold text-lg rounded-xl shadow-lg hover:bg-blue-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <span className="flex items-center">
-                  شروع کنید
-                  <ArrowLeft className="w-6 h-6 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
+              {/* Main Headline - Large Bold White */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-tight tracking-tight"
+              >
+                دستیار شخصی شما برای
+                <span className="block text-blue-200 mt-2">
+                  بهبود تعادل کار و زندگی
                 </span>
-              </button>
-              
-              <button className="px-10 py-5 border-2 border-gray-300 text-gray-700 font-semibold text-lg rounded-xl hover:border-blue-600 hover:text-blue-600 transition-all duration-300 hover:-translate-y-1">
-                نمونه کارهای ما
-              </button>
-            </motion.div>
+              </motion.h1>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-20 pt-16 border-t border-gray-200"
-            >
-              <div className="text-center">
-                <div className="text-4xl sm:text-5xl font-bold text-black">۱۰۰+</div>
-                <div className="text-gray-600 mt-2 text-lg">پروژه تکمیل شده</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl sm:text-5xl font-bold text-black">۵۰+</div>
-                <div className="text-gray-600 mt-2 text-lg">مشتری راضی</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl sm:text-5xl font-bold text-black">۵+</div>
-                <div className="text-gray-600 mt-2 text-lg">سال تجربه</div>
-              </div>
+              {/* Subheadline - Light Gray */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-lg sm:text-xl lg:text-2xl font-medium text-blue-100 max-w-3xl mx-auto leading-relaxed"
+              >
+                راه‌حل‌های ما برای ساده‌سازی فرآیندهای کاری و بهبود بهره‌وری طراحی شده‌اند.
+              </motion.p>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              >
+                {/* Primary Button - Black Background, White Text */}
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-black text-white hover:bg-gray-800 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center gap-2"
+                >
+                  شروع دوره آزمایشی ۱۴ روزه
+                </motion.button>
+
+                {/* Secondary Button - White Background, Black Text */}
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-black hover:bg-gray-50 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center gap-2"
+                >
+                  <Sparkles className="w-5 h-5 text-blue-600" />
+                  افغان‌کار چگونه کار می‌کند
+                </motion.button>
+              </motion.div>
+
+              {/* Central Illustration - Smartphone Mockup */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="flex justify-center mt-16"
+              >
+                <div className="relative">
+                  {/* Smartphone Frame */}
+                  <motion.div
+                    initial={{ scale: 0.8, rotate: -5 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.8, delay: 1.0 }}
+                    className="w-64 h-96 sm:w-80 sm:h-[480px] bg-gray-800 rounded-3xl p-2 shadow-2xl"
+                  >
+                    {/* Screen */}
+                    <div className="w-full h-full bg-gradient-to-br from-pink-400 via-orange-400 to-blue-500 rounded-2xl relative overflow-hidden">
+                      {/* Screen Content */}
+                      <div className="absolute inset-0 p-6 flex flex-col justify-between">
+                        {/* Top Text */}
+                        <div className="text-white text-sm font-medium">
+                          در حال صحبت با ربات هوش مصنوعی
+                        </div>
+                        
+                        {/* Center Bubble */}
+                        <div className="flex justify-center items-center">
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ delay: 1.5, duration: 0.5 }}
+                            className="w-20 h-20 bg-white/30 rounded-full backdrop-blur-sm flex items-center justify-center"
+                          >
+                            <Sparkles className="w-8 h-8 text-white" />
+                          </motion.div>
+                        </div>
+                        
+                        {/* Bottom Question */}
+                        <div className="text-white text-sm text-center">
+                          بهترین ابزارهای طراحی رابط کاربری همکاری در سال ۲۰۲۵ کدامند؟
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Floating Elements */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 1.6 }}
+                    className="absolute -top-4 -right-4 w-8 h-8 bg-white/30 rounded-full blur-sm"
+                  />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 1.7 }}
+                    className="absolute -bottom-4 -left-4 w-6 h-6 bg-white/20 rounded-full blur-sm"
+                  />
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
