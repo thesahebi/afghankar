@@ -46,17 +46,17 @@ const ZivaraCard: React.FC<ZivaraCardProps> = ({
           </div>
         </div>
         <div className="mb-3">
-          <h3 className="text-lg font-bold text-gray-900 dark:text-white">{title}</h3>
+          <h3 className="text-lg font-bold text-white dark:text-white">{title}</h3>
         </div>
         <div className="mb-4 flex-grow">
-          <p className="text-gray-600 text-sm leading-relaxed">{content}</p>
+          <p className="text-white text-sm leading-relaxed">{content}</p>
         </div>
         {features.length > 0 && (
           <div className="mt-auto">
-            <ul className="text-xs text-gray-500 space-y-1">
+            <ul className="text-xs text-white space-y-1">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-center justify-center">
-                  <span className="w-1 h-1 bg-gray-400 rounded-full ml-2"></span>
+                  <span className="w-1 h-1 bg-white rounded-full ml-2"></span>
                   {feature}
                 </li>
               ))}
@@ -92,17 +92,17 @@ const ZivaraCard: React.FC<ZivaraCardProps> = ({
       </div>
       
       <div className="mb-3">
-        <h3 className="text-lg font-bold text-gray-900 dark:text-white">{title}</h3>
+        <h3 className="text-lg font-bold text-white dark:text-white">{title}</h3>
       </div>
       <div className="mb-4 flex-grow">
-        <p className="text-sm text-gray-600 leading-relaxed">{content}</p>
+        <p className="text-sm text-white leading-relaxed">{content}</p>
       </div>
       {features.length > 0 && (
         <div className="mt-auto">
-          <ul className="text-xs text-gray-500 space-y-1">
+          <ul className="text-xs text-white space-y-1">
             {features.map((feature, index) => (
               <li key={index} className="flex items-center justify-center">
-                <span className="w-1 h-1 bg-gray-400 rounded-full ml-2"></span>
+                <span className="w-1 h-1 bg-white rounded-full ml-2"></span>
                 {feature}
               </li>
             ))}

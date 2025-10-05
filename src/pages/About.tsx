@@ -14,10 +14,10 @@ const About: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
               درباره <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">افغان‌کار</span>
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-white leading-relaxed">
               ما در ایجاد راه‌حل‌های دیجیتال که کسب و کارها را متحول می‌کند و ارتباطات معناداری بین برندها و مخاطبانشان ایجاد می‌کند، اشتیاق داریم.
             </p>
           </motion.div>
@@ -34,10 +34,10 @@ const About: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
                 ماموریت ما
               </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg text-white mb-8 leading-relaxed">
                 توانمندسازی کسب و کارها با راه‌حل‌های دیجیتال پیشرفته که رشد را هدایت می‌کند، تجربیات کاربری را بهبود می‌بخشد و ارزش پایدار در چشم‌انداز دیجیتال ایجاد می‌کند.
               </p>
               <div className="space-y-4">
@@ -56,7 +56,7 @@ const About: React.FC = () => {
                     className="flex items-center"
                   >
                     <CheckCircle className="w-6 h-6 text-green-500 ml-4 flex-shrink-0" />
-                    <span className="text-gray-700">{value}</span>
+                    <span className="text-white">{value}</span>
                   </motion.div>
                 ))}
               </div>
@@ -74,8 +74,8 @@ const About: React.FC = () => {
                   <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto mb-6 flex items-center justify-center">
                     <Target className="w-12 h-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">چشم‌انداز ما</h3>
-                  <p className="text-gray-600">ارائه‌دهنده پیشرو راه‌حل‌های دیجیتال، شناخته شده برای نوآوری و تعالی.</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">چشم‌انداز ما</h3>
+                  <p className="text-white">ارائه‌دهنده پیشرو راه‌حل‌های دیجیتال، شناخته شده برای نوآوری و تعالی.</p>
                 </div>
               </div>
             </motion.div>
@@ -84,7 +84,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -93,10 +93,10 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               ارزش‌های ما
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               این ارزش‌های اصلی همه کارهای ما را هدایت می‌کند و فرهنگ ما را شکل می‌دهد.
             </p>
           </motion.div>
@@ -139,8 +139,8 @@ const About: React.FC = () => {
                 <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${value.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-semibold text-white mb-4">{value.title}</h3>
+                <p className="text-white leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -157,10 +157,10 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               تیم ما را ملاقات کنید
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               ما تیمی متنوع از متخصصان مشتاق هستیم که به ارائه نتایج استثنایی متعهد هستیم.
             </p>
           </motion.div>
@@ -195,9 +195,9 @@ const About: React.FC = () => {
                 className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center"
               >
                 <div className="text-6xl mb-6">{member.image}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
                 <p className="text-blue-600 font-medium mb-4">{member.role}</p>
-                <p className="text-gray-600 leading-relaxed">{member.description}</p>
+                <p className="text-white leading-relaxed">{member.description}</p>
               </motion.div>
             ))}
           </div>
@@ -221,7 +221,7 @@ const About: React.FC = () => {
               بیایید در مورد چگونگی کمک ما برای متحول کردن کسب و کار شما با راه‌حل‌های دیجیتال صحبت کنیم.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+              <button className="group px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-white transition-all duration-300 hover:-translate-y-1 shadow-lg">
                 <span className="flex items-center justify-center">
                   تماس بگیرید
                   <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />

@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={footerVariants}
-      className="bg-gray-900 text-white relative overflow-hidden"
+      className="bg-white text-white relative overflow-hidden"
       dir="rtl"
     >
       {/* Background pattern */}
@@ -45,20 +45,20 @@ const Footer: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">افغان‌کار</h3>
-                <p className="text-gray-400 text-sm">راه‌حل‌های دیجیتال</p>
+                <p className="text-white text-sm">راه‌حل‌های دیجیتال</p>
               </div>
             </div>
-            <p className="text-gray-300 text-base leading-relaxed max-w-md mb-6">
+            <p className="text-white text-base leading-relaxed max-w-md mb-6">
               ما راه‌حل‌های دیجیتال مدرن و نوآورانه ایجاد می‌کنیم که به کسب و کارها کمک می‌کند تا در دنیای دیجیتال رشد کنند و موفق شوند.
             </p>
             <div className="flex space-x-4 rtl:space-x-reverse">
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+              <a href="#" className="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+              <a href="#" className="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+              <a href="#" className="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
                 <Github className="w-5 h-5" />
               </a>
             </div>
@@ -68,10 +68,10 @@ const Footer: React.FC = () => {
           <motion.div variants={itemVariants}>
             <h4 className="text-lg font-semibold mb-6 text-white">لینک‌های سریع</h4>
             <ul className="space-y-3">
-              <li><Link to="/" className="text-gray-300 hover:text-white transition-colors duration-200">خانه</Link></li>
-              <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors duration-200">درباره ما</Link></li>
-              <li><Link to="/services" className="text-gray-300 hover:text-white transition-colors duration-200">خدمات</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors duration-200">تماس</Link></li>
+              <li><Link to="/" className="text-white hover:text-white transition-colors duration-200">خانه</Link></li>
+              <li><Link to="/about" className="text-white hover:text-white transition-colors duration-200">درباره ما</Link></li>
+              <li><Link to="/services" className="text-white hover:text-white transition-colors duration-200">خدمات</Link></li>
+              <li><Link to="/contact" className="text-white hover:text-white transition-colors duration-200">تماس</Link></li>
             </ul>
           </motion.div>
 
@@ -81,15 +81,15 @@ const Footer: React.FC = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3 rtl:space-x-reverse">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">info@afghankar.com</span>
+                <span className="text-white">info@afghankar.com</span>
               </div>
               <div className="flex items-center space-x-3 rtl:space-x-reverse">
                 <Phone className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">+93 780 123 456</span>
+                <span className="text-white">+93 780 123 456</span>
               </div>
               <div className="flex items-center space-x-3 rtl:space-x-reverse">
                 <MapPin className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">کابل، افغانستان</span>
+                <span className="text-white">کابل، افغانستان</span>
               </div>
             </div>
           </motion.div>
@@ -98,17 +98,17 @@ const Footer: React.FC = () => {
         {/* Bottom Section */}
         <motion.div
           variants={itemVariants}
-          className="border-t border-gray-800 mt-12 pt-8"
+          className="border-t border-white mt-12 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
+            <p className="text-white text-sm">
               &copy; {new Date().getFullYear()} افغان‌کار. تمامی حقوق محفوظ است.
             </p>
             <div className="flex space-x-6 rtl:space-x-reverse text-sm">
-              <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <Link to="/privacy" className="text-white hover:text-white transition-colors duration-200">
                 حریم خصوصی
               </Link>
-              <Link to="/terms" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <Link to="/terms" className="text-white hover:text-white transition-colors duration-200">
                 شرایط استفاده
               </Link>
             </div>

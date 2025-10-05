@@ -45,7 +45,7 @@ const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-lg sm:text-xl lg:text-2xl font-medium text-blue-100 max-w-3xl mx-auto leading-relaxed"
+                className="text-lg sm:text-xl lg:text-2xl font-medium text-white max-w-3xl mx-auto leading-relaxed"
               >
                 راه‌حل‌های ما برای ساده‌سازی فرآیندهای کاری و بهبود بهره‌وری طراحی شده‌اند.
               </motion.p>
@@ -61,7 +61,7 @@ const Home: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-black text-white hover:bg-gray-800 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center gap-2"
+                  className="bg-black text-white hover:bg-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center gap-2"
                 >
                   شروع دوره آزمایشی ۱۴ روزه
                 </motion.button>
@@ -70,7 +70,7 @@ const Home: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-black hover:bg-gray-50 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center gap-2"
+                  className="bg-white text-black hover:bg-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 flex items-center gap-2"
                 >
                   <Sparkles className="w-5 h-5 text-blue-600" />
                   افغان‌کار چگونه کار می‌کند
@@ -90,7 +90,7 @@ const Home: React.FC = () => {
                     initial={{ scale: 0.8, rotate: -5 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{ duration: 0.8, delay: 1.0 }}
-                    className="w-64 h-96 sm:w-80 sm:h-[480px] bg-gray-800 rounded-3xl p-2 shadow-2xl"
+                    className="w-64 h-96 sm:w-80 sm:h-[480px] bg-white rounded-3xl p-2 shadow-2xl"
                   >
                     {/* Screen */}
                     <div className="w-full h-full bg-gradient-to-br from-pink-400 via-orange-400 to-blue-500 rounded-2xl relative overflow-hidden">
@@ -142,7 +142,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -151,10 +151,10 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
               خدمات ما
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               ما راه‌حل‌های جامع دیجیتال ارائه می‌دهیم تا کسب و کار شما در دنیای مدرن رشد کند.
             </p>
           </motion.div>
@@ -191,8 +191,8 @@ const Home: React.FC = () => {
                 <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${service.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
+                <p className="text-white leading-relaxed">{service.description}</p>
               </motion.div>
             ))}
           </div>
@@ -209,10 +209,10 @@ const Home: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
                 چرا افغان‌کار؟
               </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg text-white mb-8 leading-relaxed">
                 ما در ایجاد راه‌حل‌های دیجیتال که نه تنها زیبا هستند بلکه نتایج واقعی کسب و کار را به همراه دارند، اشتیاق داریم. تیم ما خلاقیت را با تخصص فنی ترکیب می‌کند تا تجربیات استثنایی ارائه دهد.
               </p>
               
@@ -234,7 +234,7 @@ const Home: React.FC = () => {
                     <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center ml-4 flex-shrink-0">
                       <div className="w-2 h-2 bg-white rounded-full"></div>
                     </div>
-                    <span className="text-gray-700">{feature}</span>
+                    <span className="text-white">{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -252,8 +252,8 @@ const Home: React.FC = () => {
                   <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto mb-6 flex items-center justify-center">
                     <Sparkles className="w-12 h-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">نوآوری اول</h3>
-                  <p className="text-gray-600">ما با جدیدترین تکنولوژی‌ها و روندهای طراحی پیش می‌رویم.</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">نوآوری اول</h3>
+                  <p className="text-white">ما با جدیدترین تکنولوژی‌ها و روندهای طراحی پیش می‌رویم.</p>
                 </div>
               </div>
             </motion.div>
@@ -278,7 +278,7 @@ const Home: React.FC = () => {
               بیایید با همکاری یکدیگر چیزی شگفت‌انگیز خلق کنیم. همین امروز با ما تماس بگیرید و در مورد پروژه خود صحبت کنیم.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+              <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-white transition-all duration-300 hover:-translate-y-1 shadow-lg">
                 پروژه خود را شروع کنید
               </button>
               <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 hover:-translate-y-1">

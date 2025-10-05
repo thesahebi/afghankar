@@ -34,10 +34,10 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">تماس</span> با ما
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-white leading-relaxed">
               آماده شروع پروژه بعدی خود هستید؟ ما دوست داریم از شما بشنویم. پیامی برای ما بفرستید و در اسرع وقت پاسخ خواهیم داد.
             </p>
           </motion.div>
@@ -55,11 +55,11 @@ const Contact: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">پیامی برای ما بفرستید</h2>
+              <h2 className="text-3xl font-bold text-white mb-8">پیامی برای ما بفرستید</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
                       نام کامل
                     </label>
                     <input
@@ -68,13 +68,13 @@ const Contact: React.FC = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-white rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                       placeholder="نام کامل شما"
                       required
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
                       آدرس ایمیل
                     </label>
                     <input
@@ -83,14 +83,14 @@ const Contact: React.FC = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-white rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                       placeholder="your@email.com"
                       required
                     />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="company" className="block text-sm font-medium text-white mb-2">
                     شرکت
                   </label>
                   <input
@@ -99,12 +99,12 @@ const Contact: React.FC = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-white rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                     placeholder="نام شرکت شما"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
                     پیام
                   </label>
                   <textarea
@@ -113,7 +113,7 @@ const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
+                    className="w-full px-4 py-3 border border-white rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
                     placeholder="در مورد پروژه خود به ما بگویید..."
                     required
                   />
@@ -139,8 +139,8 @@ const Contact: React.FC = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">اطلاعات تماس</h2>
-                <p className="text-lg text-gray-600 mb-8">
+                <h2 className="text-3xl font-bold text-white mb-8">اطلاعات تماس</h2>
+                <p className="text-lg text-white mb-8">
                   ما اینجا هستیم تا کمک کنیم و به هر سوالی که ممکن است داشته باشید پاسخ دهیم. منتظر شنیدن از شما هستیم.
                 </p>
               </div>
@@ -151,9 +151,9 @@ const Contact: React.FC = () => {
                     <Mail className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">ایمیل</h3>
-                    <p className="text-gray-600">info@afghankar.com</p>
-                    <p className="text-gray-600">support@afghankar.com</p>
+                    <h3 className="text-lg font-semibold text-white mb-1">ایمیل</h3>
+                    <p className="text-white">info@afghankar.com</p>
+                    <p className="text-white">support@afghankar.com</p>
                   </div>
                 </div>
 
@@ -162,9 +162,9 @@ const Contact: React.FC = () => {
                     <Phone className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">تلفن</h3>
-                    <p className="text-gray-600">+93 780 123 456</p>
-                    <p className="text-gray-600">+93 70 987 654</p>
+                    <h3 className="text-lg font-semibold text-white mb-1">تلفن</h3>
+                    <p className="text-white">+93 780 123 456</p>
+                    <p className="text-white">+93 70 987 654</p>
                   </div>
                 </div>
 
@@ -173,20 +173,20 @@ const Contact: React.FC = () => {
                     <MapPin className="w-6 h-6 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">دفتر</h3>
-                    <p className="text-gray-600">خیابان تجارت، کابل</p>
-                    <p className="text-gray-600">افغانستان</p>
+                    <h3 className="text-lg font-semibold text-white mb-1">دفتر</h3>
+                    <p className="text-white">خیابان تجارت، کابل</p>
+                    <p className="text-white">افغانستان</p>
                   </div>
                 </div>
               </div>
 
               {/* Business Hours */}
-              <div className="bg-gray-50 rounded-2xl p-6">
+              <div className="bg-white rounded-2xl p-6">
                 <div className="flex items-center space-x-3 rtl:space-x-reverse mb-4">
                   <Clock className="w-6 h-6 text-blue-600" />
-                  <h3 className="text-lg font-semibold text-gray-900">ساعات کاری</h3>
+                  <h3 className="text-lg font-semibold text-white">ساعات کاری</h3>
                 </div>
-                <div className="space-y-2 text-gray-600">
+                <div className="space-y-2 text-white">
                   <div className="flex justify-between">
                     <span>شنبه تا چهارشنبه</span>
                     <span>۹:۰۰ صبح - ۶:۰۰ عصر</span>
@@ -207,7 +207,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -216,10 +216,10 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               سوالات متداول
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-white">
               در اینجا برخی از سوالات رایجی که از مشتریانمان دریافت می‌کنیم آورده شده است.
             </p>
           </motion.div>
@@ -251,8 +251,8 @@ const Contact: React.FC = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
+                <p className="text-white leading-relaxed">{faq.answer}</p>
               </motion.div>
             ))}
           </div>
@@ -276,7 +276,7 @@ const Contact: React.FC = () => {
               بیایید ایده‌های شما را بحث کنیم و با هم چیزی شگفت‌انگیز خلق کنیم. ما هیجان‌زده‌ایم که با شما کار کنیم!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+              <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-white transition-all duration-300 hover:-translate-y-1 shadow-lg">
                 تماس تلفنی برنامه‌ریزی کنید
               </button>
               <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 hover:-translate-y-1">

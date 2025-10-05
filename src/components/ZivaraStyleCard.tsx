@@ -22,7 +22,7 @@ const ZivaraStyleCard: React.FC<ZivaraStyleCardProps> = ({
 }) => {
   return (
     <motion.div
-      className={`${cardClass} bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all duration-300 h-full flex flex-col items-center text-center justify-center`}
+      className={`${cardClass} bg-white rounded-2xl p-8 shadow-sm border border-white hover:shadow-lg hover:border-white transition-all duration-300 h-full flex flex-col items-center text-center justify-center`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
@@ -46,19 +46,19 @@ const ZivaraStyleCard: React.FC<ZivaraStyleCardProps> = ({
       </div>
 
       {/* 2️⃣ Title below the icon */}
-      <h3 className="text-xl font-semibold text-gray-900 mb-4 leading-tight">
+      <h3 className="text-xl font-semibold text-white mb-4 leading-tight">
         {title}
       </h3>
 
       {/* 3️⃣ Subtitle below the title */}
-      <p className="text-gray-600 text-sm leading-relaxed mb-6">
+      <p className="text-white text-sm leading-relaxed mb-6">
         {content}
       </p>
       
       {/* 4️⃣ List of items under the subtitle */}
       {features.length > 0 && (
         <div className="flex flex-col items-center text-center">
-          <ul className="text-xs text-gray-500 space-y-2">
+          <ul className="text-xs text-white space-y-2">
             {features.map((feature, index) => (
               <li key={index} className="flex flex-col items-center text-center">
                 <div className="flex items-center justify-center mb-1">

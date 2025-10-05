@@ -13,7 +13,7 @@ const ProgramCard: React.FC<ProgramModelProps> = ({
         {typeof Icon === "function" ? <Icon size={40} /> : Icon}
       </div>
 
-      <p className="text-gray-600 dark:text-white leading-relaxed">{name}</p>
+      <p className="text-white dark:text-white leading-relaxed">{name}</p>
     </div>
   );
 };

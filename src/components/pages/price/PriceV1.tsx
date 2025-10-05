@@ -14,7 +14,7 @@ const PricingCard = () => {
         '1 Week Support'
       ],
       bgColor: 'bg-white',
-      textColor: 'text-gray-900'
+      textColor: 'text-white'
     },
     {
       name: 'Premium',
@@ -28,7 +28,7 @@ const PricingCard = () => {
         '2 Months Support',
         'Free Email'
       ],
-      bgColor: 'bg-gray-900',
+      bgColor: 'bg-white',
       textColor: 'text-white'
     },
     {
@@ -44,7 +44,7 @@ const PricingCard = () => {
         'Free Email'
       ],
       bgColor: 'bg-white',
-      textColor: 'text-gray-900'
+      textColor: 'text-white'
     }
   ];
 

@@ -27,8 +27,8 @@ const FeatureCardV1: React.FC<FeatureModelProps> = ({
         </div>
       </div>
       <div className="flex flex-col flex-grow">
-        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
-        <p className="text-gray-600 text-sm leading-relaxed">{content}</p>
+        <h3 className="text-lg font-bold text-white dark:text-white mb-3">{title}</h3>
+        <p className="text-white text-sm leading-relaxed">{content}</p>
       </div>
     </div>
   );

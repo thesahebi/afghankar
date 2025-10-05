@@ -23,10 +23,10 @@ const Services: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">خدمات</span> ما
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-white leading-relaxed">
               ما راه‌حل‌های جامع دیجیتال ارائه می‌دهیم تا کسب و کار شما در دنیای مدرن رشد کند.
             </p>
           </motion.div>
@@ -81,18 +81,18 @@ const Services: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white"
               >
                 <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${service.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                <h3 className="text-2xl font-semibold text-white mb-4">{service.title}</h3>
+                <p className="text-white mb-6 leading-relaxed">{service.description}</p>
                 <ul className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-green-500 ml-3 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-white">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -103,7 +103,7 @@ const Services: React.FC = () => {
       </section>
 
       {/* Additional Services */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -112,10 +112,10 @@ const Services: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               خدمات تکمیلی
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               ما همچنین خدمات تخصصی برای پشتیبانی از رشد کسب و کار شما ارائه می‌دهیم.
             </p>
           </motion.div>
@@ -158,8 +158,8 @@ const Services: React.FC = () => {
                 <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${service.color} text-white mb-4 group-hover:scale-105 transition-transform duration-300`}>
                   {service.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                <h3 className="text-lg font-semibold text-white mb-3">{service.title}</h3>
+                <p className="text-white text-sm leading-relaxed">{service.description}</p>
               </motion.div>
             ))}
           </div>
@@ -176,10 +176,10 @@ const Services: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
               فرآیند کار ما
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               ما از یک روش‌شناسی اثبات شده پیروی می‌کنیم تا تحویل موفق پروژه را تضمین کنیم.
             </p>
           </motion.div>
@@ -218,8 +218,8 @@ const Services: React.FC = () => {
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto mb-6 flex items-center justify-center">
                   <span className="text-white font-bold text-lg">{step.step}</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{step.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                <h3 className="text-xl font-semibold text-white mb-4">{step.title}</h3>
+                <p className="text-white leading-relaxed">{step.description}</p>
                 </motion.div>
               ))}
           </div>
@@ -243,7 +243,7 @@ const Services: React.FC = () => {
               بیایید در مورد پروژه شما صحبت کنیم و ببینیم چگونه می‌توانیم به زنده کردن دیدگاه شما کمک کنیم.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+              <button className="group px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-white transition-all duration-300 hover:-translate-y-1 shadow-lg">
                 <span className="flex items-center justify-center">
                   پروژه خود را شروع کنید
                   <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
