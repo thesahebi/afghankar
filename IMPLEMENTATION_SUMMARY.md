@@ -162,3 +162,4 @@ The Afghankar.com website has been completely redesigned and implemented accordi
 
 The website is now ready for production deployment and provides a professional, modern experience for Dari-speaking users while maintaining the exact design specifications requested.
 
+

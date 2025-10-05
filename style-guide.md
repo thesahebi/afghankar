@@ -167,3 +167,4 @@ src/
 6. **KEEP** animations subtle and professional
 7. **TEST** on multiple devices and browsers
 
+

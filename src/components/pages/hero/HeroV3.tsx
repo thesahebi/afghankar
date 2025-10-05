@@ -19,7 +19,7 @@ function HeroV3() {
             </div>
 
             <div className="flex md:hidden">
-              <button type="button" className="text-gray-900">
+              <button type="button" className="text-white">
                 <span x-show="!expanded" aria-hidden="true">
                   <svg
                     className="w-7 h-7"
@@ -60,7 +60,7 @@ function HeroV3() {
               <a
                 href="#"
                 title=""
-                className="text-base font-medium text-gray-900 transition-all duration-200 hover:text-indigo-600"
+                className="text-base font-medium text-white transition-all duration-200 hover:text-indigo-600"
               >
                 {" "}
                 Features{" "}
@@ -69,7 +69,7 @@ function HeroV3() {
               <a
                 href="#"
                 title=""
-                className="text-base font-medium text-gray-900 transition-all duration-200 hover:text-indigo-600"
+                className="text-base font-medium text-white transition-all duration-200 hover:text-indigo-600"
               >
                 {" "}
                 Pricing{" "}
@@ -78,7 +78,7 @@ function HeroV3() {
               <a
                 href="#"
                 title=""
-                className="text-base font-medium text-gray-900 transition-all duration-200 hover:text-indigo-600"
+                className="text-base font-medium text-white transition-all duration-200 hover:text-indigo-600"
               >
                 {" "}
                 Support{" "}
@@ -92,7 +92,7 @@ function HeroV3() {
                 <a
                   href="#"
                   title=""
-                  className="flex items-center text-base font-medium text-gray-900 transition-all duration-200 focus:outline-none focus:ring-0"
+                  className="flex items-center text-base font-medium text-white transition-all duration-200 focus:outline-none focus:ring-0"
                 >
                   {" "}
                   Features{" "}
@@ -101,7 +101,7 @@ function HeroV3() {
                 <a
                   href="#"
                   title=""
-                  className="flex items-center text-base font-medium text-gray-900 transition-all duration-200 focus:outline-none focus:ring-0"
+                  className="flex items-center text-base font-medium text-white transition-all duration-200 focus:outline-none focus:ring-0"
                 >
                   {" "}
                   Pricing{" "}
@@ -110,7 +110,7 @@ function HeroV3() {
                 <a
                   href="#"
                   title=""
-                  className="flex items-center text-base font-medium text-gray-900 transition-all duration-200 focus:outline-none focus:ring-0"
+                  className="flex items-center text-base font-medium text-white transition-all duration-200 focus:outline-none focus:ring-0"
                 >
                   {" "}
                   Support{" "}
@@ -121,7 +121,7 @@ function HeroV3() {
         </div>
       </header>
 
-      <section className="relative bg-gray-900">
+      <section className="relative bg-white">
         <div className="absolute inset-0">
           <div className="absolute inset-y-0 left-0 w-1/2 bg-white"></div>
         </div>
@@ -143,7 +143,7 @@ function HeroV3() {
                 <a
                   href="#"
                   title=""
-                  className="inline-flex relative items-center justify-center w-full sm:w-auto px-8 py-3 sm:text-sm text-base sm:py-3.5 font-semibold text-white transition-all duration-200 bg-gray-900 border border-transparent rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                  className="inline-flex relative items-center justify-center w-full sm:w-auto px-8 py-3 sm:text-sm text-base sm:py-3.5 font-semibold text-white transition-all duration-200 bg-white border border-transparent rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
                   role="button"
                 >
                   Read Exclusive Blog
@@ -152,7 +152,7 @@ function HeroV3() {
             </div>
           </div>
 
-          <div className="relative flex items-end px-4 py-16 bg-gray-900 sm:px-6 lg:pb-24 lg:px-8 xl:pl-12">
+          <div className="relative flex items-end px-4 py-16 bg-white sm:px-6 lg:pb-24 lg:px-8 xl:pl-12">
             <div className="absolute inset-0">
               <img
                 className="object-cover w-full h-full"
@@ -162,7 +162,7 @@ function HeroV3() {
             </div>
 
             <div className="relative w-full max-w-lg mx-auto lg:max-w-none">
-              <p className="text-lg font-bold text-white">Featured Articles</p>
+              <p className="text-lg font-bold text-black">Featured Articles</p>
 
               <div className="mt-6 space-y-5">
                 <div className="overflow-hidden transition-all duration-200 transform bg-white border border-gray-200 rounded-2xl hover:shadow-lg hover:-translate-y-1">
