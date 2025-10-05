@@ -138,3 +138,4 @@ If you continue to have issues:
 4. Consider using a different deployment method (Netlify, Vercel, etc.)
 
 The website is fully built and ready for deployment - it's just a matter of configuring the GitHub Pages permissions correctly.
+

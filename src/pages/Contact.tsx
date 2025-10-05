@@ -1,277 +1,292 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import Section from '../ui/Section'
-import Card from '../ui/Card'
-import Button from '../ui/Button'
+import { Mail, Phone, MapPin, Send, CheckCircle, Clock, Users } from 'lucide-react'
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     company: '',
-    service: '',
     message: ''
   })
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission here
     console.log('Form submitted:', formData)
-    alert('پیام شما با موفقیت ارسال شد!')
   }
 
-  const contactInfo = [
-    {
-      icon: '📧',
-      title: 'ایمیل',
-      details: 'info@afghankar.com',
-      description: 'برای سوالات عمومی و اطلاعات بیشتر'
-    },
-    {
-      icon: '📞',
-      title: 'تلفن',
-      details: '+93 780 123 456',
-      description: 'پشتیبانی 24/7 و مشاوره فنی'
-    },
-    {
-      icon: '📍',
-      title: 'آدرس',
-      details: 'کابل، افغانستان',
-      description: 'دفتر مرکزی ما در کابل'
-    },
-    {
-      icon: '🕒',
-      title: 'ساعات کاری',
-      details: 'شنبه تا پنج‌شنبه',
-      description: '8:00 صبح تا 6:00 عصر'
-    }
-  ]
-
-  const services = [
-    'طراحی و توسعه وب سایت',
-    'خدمات ابری',
-    'امنیت سایبری',
-    'شبکه‌سازی و زیرساخت',
-    'توسعه اپلیکیشن موبایل',
-    'هوش مصنوعی و اتوماسیون',
-    'مشاوره فناوری اطلاعات',
-    'سایر خدمات'
-  ]
-
-  const fadeInVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } },
-  }
-
-  const staggerContainerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
   }
 
   return (
-    <>
-      <Section className="bg-primary text-white py-16 md:py-20 lg:py-24 text-center">
-        <motion.h1
-          initial="hidden"
-          animate="visible"
-          variants={fadeInVariants}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
-        >
-          تماس با ما
-        </motion.h1>
-        <motion.p
-          initial="hidden"
-          animate="visible"
-          variants={fadeInVariants}
-          transition={{ delay: 0.2 }}
-          className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto text-white/90"
-        >
-          آماده‌ایم تا به شما کمک کنیم. با ما تماس بگیرید.
-        </motion.p>
-      </Section>
-
-      <Section className="bg-white py-16 md:py-20 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-          {/* Contact Form */}
+    <div className="min-h-screen bg-white" dir="rtl">
+      {/* Hero Section */}
+      <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={fadeInVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
           >
-            <Card className="p-6 md:p-8 hover:shadow-xl transition-all duration-300">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">ارسال پیام</h2>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">تماس</span> با ما
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              آماده شروع پروژه بعدی خود هستید؟ ما دوست داریم از شما بشنویم. پیامی برای ما بفرستید و در اسرع وقت پاسخ خواهیم داد.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">پیامی برای ما بفرستید</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      نام و نام خانوادگی *
+                      نام کامل
                     </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       value={formData.name}
-                      onChange={handleInputChange}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      placeholder="نام کامل شما"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
-                      placeholder="نام شما"
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      ایمیل *
+                      آدرس ایمیل
                     </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       value={formData.email}
-                      onChange={handleInputChange}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      placeholder="your@email.com"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
-                      placeholder="email@example.com"
                     />
                   </div>
                 </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      شماره تلفن
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
-                      placeholder="+93 780 123 456"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                      نام شرکت
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
-                      placeholder="نام شرکت شما"
-                    />
-                  </div>
-                </div>
-
                 <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                    نوع خدمات مورد نیاز
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                    شرکت
                   </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
-                  >
-                    <option value="">انتخاب کنید...</option>
-                    {services.map((service, index) => (
-                      <option key={index} value={service}>{service}</option>
-                    ))}
-                  </select>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    placeholder="نام شرکت شما"
+                  />
                 </div>
-
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    پیام شما *
+                    پیام
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
-                    onChange={handleInputChange}
-                    required
+                    onChange={handleChange}
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
-                    placeholder="پیام خود را اینجا بنویسید..."
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
+                    placeholder="در مورد پروژه خود به ما بگویید..."
+                    required
                   />
                 </div>
-
-                <Button type="submit" variant="primary" size="lg" className="w-full">
-                  ارسال پیام
-                </Button>
+                <button
+                  type="submit"
+                  className="group w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 hover:-translate-y-1 shadow-lg"
+                >
+                  <span className="flex items-center justify-center">
+                    ارسال پیام
+                    <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                </button>
               </form>
-            </Card>
+            </motion.div>
+
+            {/* Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-8">اطلاعات تماس</h2>
+                <p className="text-lg text-gray-600 mb-8">
+                  ما اینجا هستیم تا کمک کنیم و به هر سوالی که ممکن است داشته باشید پاسخ دهیم. منتظر شنیدن از شما هستیم.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4 rtl:space-x-reverse">
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">ایمیل</h3>
+                    <p className="text-gray-600">info@afghankar.com</p>
+                    <p className="text-gray-600">support@afghankar.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4 rtl:space-x-reverse">
+                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">تلفن</h3>
+                    <p className="text-gray-600">+93 780 123 456</p>
+                    <p className="text-gray-600">+93 70 987 654</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4 rtl:space-x-reverse">
+                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">دفتر</h3>
+                    <p className="text-gray-600">خیابان تجارت، کابل</p>
+                    <p className="text-gray-600">افغانستان</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Business Hours */}
+              <div className="bg-gray-50 rounded-2xl p-6">
+                <div className="flex items-center space-x-3 rtl:space-x-reverse mb-4">
+                  <Clock className="w-6 h-6 text-blue-600" />
+                  <h3 className="text-lg font-semibold text-gray-900">ساعات کاری</h3>
+                </div>
+                <div className="space-y-2 text-gray-600">
+                  <div className="flex justify-between">
+                    <span>شنبه تا چهارشنبه</span>
+                    <span>۹:۰۰ صبح - ۶:۰۰ عصر</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>پنج‌شنبه</span>
+                    <span>۱۰:۰۰ صبح - ۴:۰۰ عصر</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>جمعه</span>
+                    <span>تعطیل</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              سوالات متداول
+            </h2>
+            <p className="text-xl text-gray-600">
+              در اینجا برخی از سوالات رایجی که از مشتریانمان دریافت می‌کنیم آورده شده است.
+            </p>
           </motion.div>
 
-          {/* Contact Information */}
+          <div className="space-y-6">
+            {[
+              {
+                question: "یک پروژه معمولی چقدر طول می‌کشد؟",
+                answer: "زمان‌بندی پروژه‌ها بسته به پیچیدگی متفاوت است، اما اکثر پروژه‌های توسعه وب ۴ تا ۱۲ هفته از شروع تا پایان طول می‌کشد."
+              },
+              {
+                question: "آیا پشتیبانی مداوم ارائه می‌دهید؟",
+                answer: "بله، ما بسته‌های جامع نگهداری و پشتیبانی برای حفظ عملکرد روان وب‌سایت شما ارائه می‌دهیم."
+              },
+              {
+                question: "از چه تکنولوژی‌هایی استفاده می‌کنید؟",
+                answer: "ما از تکنولوژی‌های مدرن از جمله React، Node.js، Python و پلتفرم‌های ابری مانند AWS و Azure استفاده می‌کنیم."
+              },
+              {
+                question: "آیا می‌توانید در SEO کمک کنید؟",
+                answer: "قطعاً! ما بهترین روش‌های SEO را در همه پروژه‌هایمان شامل می‌کنیم و خدمات اختصاصی SEO ارائه می‌دهیم."
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
+                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={staggerContainerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             className="space-y-8"
           >
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">اطلاعات تماس</h2>
-              <p className="text-base md:text-lg text-gray-600 mb-8">
-                ما آماده‌ایم تا به سوالات شما پاسخ دهیم و در مورد پروژه‌هایتان با شما صحبت کنیم. 
-                با ما تماس بگیرید تا از مشاوره رایگان ما بهره‌مند شوید.
-              </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+              آماده شروع پروژه خود هستید؟
+            </h2>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+              بیایید ایده‌های شما را بحث کنیم و با هم چیزی شگفت‌انگیز خلق کنیم. ما هیجان‌زده‌ایم که با شما کار کنیم!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+                تماس تلفنی برنامه‌ریزی کنید
+              </button>
+              <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 hover:-translate-y-1">
+                نمونه کارهای ما را ببینید
+              </button>
             </div>
-
-            <div className="space-y-4 md:space-y-6">
-              {contactInfo.map((info, index) => (
-                <motion.div variants={fadeInVariants} key={index}>
-                  <Card className="p-4 md:p-6 hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-start space-x-3 md:space-x-4 rtl:space-x-reverse">
-                      <div className="w-10 h-10 md:w-12 md:h-12 bg-primary text-white rounded-lg flex items-center justify-center text-lg md:text-xl flex-shrink-0">
-                        {info.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-1">{info.title}</h3>
-                        <p className="text-primary font-medium mb-1 text-sm md:text-base">{info.details}</p>
-                        <p className="text-gray-600 text-xs md:text-sm">{info.description}</p>
-                      </div>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div variants={fadeInVariants}>
-              <Card className="p-4 md:p-6 bg-primary text-white hover:shadow-2xl transition-all duration-300">
-                <h3 className="text-lg md:text-xl font-bold mb-4">آماده شروع هستید؟</h3>
-                <p className="mb-6 text-white/90 text-sm md:text-base">
-                  با ما تماس بگیرید و از مشاوره رایگان ما بهره‌مند شوید. 
-                  تیم ما آماده پاسخگویی به سوالات شما است.
-                </p>
-                <Button variant="accent" size="md" className="w-full">
-                  تماس فوری
-                </Button>
-              </Card>
-            </motion.div>
           </motion.div>
         </div>
-      </Section>
-    </>
+      </section>
+    </div>
   )
 }
 

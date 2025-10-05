@@ -1,196 +1,262 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import Section from '../ui/Section'
-import Card from '../ui/Card'
-import Button from '../ui/Button'
-import ZivaraStyleCard from '../components/ZivaraStyleCard'
+import { 
+  Code, 
+  Cloud, 
+  Network, 
+  ArrowRight,
+  CheckCircle,
+  Shield,
+  Zap,
+  Users
+} from 'lucide-react'
 
 const Services: React.FC = () => {
-  const services = [
-    {
-      icon: '🌐',
-      title: 'طراحی و توسعه وب سایت',
-      description: 'طراحی و توسعه وب سایت‌های حرفه‌ای و مدرن با استفاده از جدیدترین تکنولوژی‌ها',
-      features: [
-        'طراحی ریسپانسیو و مدرن',
-        'بهینه‌سازی برای موتورهای جستجو (SEO)',
-        'سرعت بالا و عملکرد بهینه',
-        'امنیت کامل و محافظت از داده‌ها',
-        'پشتیبانی و نگهداری مداوم'
-      ],
-      price: 'از 500$'
-    },
-    {
-      icon: '☁️',
-      title: 'خدمات ابری',
-      description: 'راه‌حل‌های ابری مقیاس‌پذیر و قابل اعتماد برای کسب و کارهای مختلف',
-      features: [
-        'میزبانی ابری امن و قابل اعتماد',
-        'ذخیره‌سازی ابری با پشتیبان‌گیری خودکار',
-        'مقیاس‌پذیری خودکار بر اساس نیاز',
-        'نظارت 24/7 و پشتیبانی فنی',
-        'هزینه‌های بهینه و شفاف'
-      ],
-      price: 'از 100$/ماه'
-    },
-    {
-      icon: '🔒',
-      title: 'امنیت سایبری',
-      description: 'محافظت کامل از داده‌ها و سیستم‌های شما با جدیدترین تکنولوژی‌های امنیتی',
-      features: [
-        'نظارت و نظارت 24/7',
-        'تشخیص و پیشگیری از تهدیدات',
-        'رمزگذاری پیشرفته داده‌ها',
-        'آموزش امنیت برای تیم شما',
-        'مطابقت با استانداردهای بین‌المللی'
-      ],
-      price: 'از 200$/ماه'
-    },
-    {
-      icon: '🌐',
-      title: 'شبکه‌سازی و زیرساخت',
-      description: 'طراحی و پیاده‌سازی شبکه‌های قدرتمند و قابل اعتماد',
-      features: [
-        'طراحی و پیاده‌سازی شبکه‌های محلی',
-        'اتصال اینترنت پرسرعت و پایدار',
-        'سرورهای اختصاصی و مجازی',
-        'پشتیبانی فنی 24/7',
-        'نگهداری و به‌روزرسانی مداوم'
-      ],
-      price: 'از 300$/ماه'
-    },
-    {
-      icon: '📱',
-      title: 'توسعه اپلیکیشن موبایل',
-      description: 'توسعه اپلیکیشن‌های موبایل برای iOS و Android',
-      features: [
-        'توسعه اپلیکیشن‌های iOS و Android',
-        'طراحی UI/UX جذاب و کاربرپسند',
-        'یکپارچه‌سازی با سیستم‌های موجود',
-        'تست و تضمین کیفیت',
-        'انتشار در فروشگاه‌های اپلیکیشن'
-      ],
-      price: 'از 1000$'
-    },
-    {
-      icon: '🤖',
-      title: 'هوش مصنوعی و اتوماسیون',
-      description: 'راه‌حل‌های هوش مصنوعی برای خودکارسازی فرآیندهای کسب و کار',
-      features: [
-        'چت‌بات‌های هوشمند',
-        'پردازش زبان طبیعی',
-        'تحلیل داده‌ها و پیش‌بینی',
-        'اتوماسیون فرآیندهای کسب و کار',
-        'یکپارچه‌سازی با سیستم‌های موجود'
-      ],
-      price: 'از 800$'
-    }
-  ]
-
-  const fadeInVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } },
-  }
-
-  const staggerContainerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
   return (
-    <>
-      <Section className="bg-primary text-white py-16 md:py-20 lg:py-24 text-center">
-        <motion.h1
-          initial="hidden"
-          animate="visible"
-          variants={fadeInVariants}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
-        >
-          خدمات ما
-        </motion.h1>
-        <motion.p
-          initial="hidden"
-          animate="visible"
-          variants={fadeInVariants}
-          transition={{ delay: 0.2 }}
-          className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto text-white/90"
-        >
-          راه‌حل‌های جامع فناوری اطلاعات برای رشد کسب و کار شما
-        </motion.p>
-      </Section>
+    <div className="min-h-screen bg-white" dir="rtl">
+      {/* Hero Section */}
+      <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">خدمات</span> ما
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              ما راه‌حل‌های جامع دیجیتال ارائه می‌دهیم تا کسب و کار شما در دنیای مدرن رشد کند.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-          <Section className="bg-white py-16 md:py-20 lg:py-24">
+      {/* Main Services */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {[
+              {
+                icon: <Code className="w-8 h-8" />,
+                title: "طراحی و توسعه وب",
+                description: "وب‌سایت‌های سفارشی که با تکنولوژی‌های مدرن و بهترین روش‌ها ساخته شده‌اند.",
+      features: [
+                  "طراحی واکنش‌گرا",
+                  "زمان بارگذاری سریع",
+                  "بهینه‌سازی SEO",
+                  "سازگاری با مرورگرهای مختلف"
+                ],
+                color: "from-blue-500 to-blue-600"
+              },
+              {
+                icon: <Cloud className="w-8 h-8" />,
+                title: "مهاجرت ابری",
+                description: "مهاجرت امن و کارآمد سیستم‌ها و داده‌های شما به محیط ابری برای بهبود عملکرد.",
+      features: [
+                  "مهاجرت امن داده‌ها",
+                  "کاهش هزینه‌های عملیاتی",
+                  "مقیاس‌پذیری بالا",
+                  "پشتیبان‌گیری خودکار"
+                ],
+                color: "from-green-500 to-green-600"
+              },
+              {
+                icon: <Network className="w-8 h-8" />,
+                title: "شبکه‌سازی و زیرساخت",
+                description: "طراحی، پیاده‌سازی و مدیریت شبکه‌های کامپیوتری و زیرساخت‌های IT.",
+      features: [
+                  "طراحی شبکه‌های امن",
+                  "مدیریت زیرساخت",
+                  "پشتیبانی ۲۴/۷",
+                  "بهینه‌سازی عملکرد"
+                ],
+                color: "from-purple-500 to-purple-600"
+              }
+            ].map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+              >
+                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${service.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  {service.icon}
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">{service.title}</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                <ul className="space-y-3">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-500 ml-3 flex-shrink-0" />
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Services */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              خدمات تکمیلی
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              ما همچنین خدمات تخصصی برای پشتیبانی از رشد کسب و کار شما ارائه می‌دهیم.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Shield className="w-8 h-8" />,
+                title: "امنیت و انطباق",
+                description: "راه‌حل‌های جامع امنیتی برای محافظت از دارایی‌های دیجیتال شما.",
+                color: "from-red-500 to-red-600"
+              },
+              {
+                icon: <Zap className="w-8 h-8" />,
+                title: "بهینه‌سازی عملکرد",
+                description: "سرعت بخشیدن به برنامه‌های شما و بهبود تجربه کاربری.",
+                color: "from-yellow-500 to-yellow-600"
+              },
+              {
+                icon: <Users className="w-8 h-8" />,
+                title: "مشاوره",
+                description: "راهنمایی استراتژیک برای کمک به تصمیم‌گیری‌های آگاهانه فناوری.",
+                color: "from-indigo-500 to-indigo-600"
+              },
+              {
+                icon: <CheckCircle className="w-8 h-8" />,
+                title: "پشتیبانی و نگهداری",
+                description: "پشتیبانی مداوم و نگهداری برای حفظ عملکرد بهینه سیستم‌ها.",
+                color: "from-teal-500 to-teal-600"
+              }
+            ].map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${service.color} text-white mb-4 group-hover:scale-105 transition-transform duration-300`}>
+                  {service.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              فرآیند کار ما
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              ما از یک روش‌شناسی اثبات شده پیروی می‌کنیم تا تحویل موفق پروژه را تضمین کنیم.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: "۰۱",
+                title: "کشف و تحلیل",
+                description: "اهداف کسب و کار و نیازمندی‌های شما را درک می‌کنیم."
+              },
+              {
+                step: "۰۲",
+                title: "برنامه‌ریزی",
+                description: "برنامه‌ای دقیق از پروژه و جدول زمانی ایجاد می‌کنیم."
+              },
+              {
+                step: "۰۳",
+                title: "توسعه",
+                description: "راه‌حل شما را با استفاده از تکنولوژی‌های مدرن می‌سازیم."
+              },
+              {
+                step: "۰۴",
+                title: "راه‌اندازی",
+                description: "راه‌حل شما را مستقر و برای موفقیت بهینه‌سازی می‌کنیم."
+              }
+            ].map((step, index) => (
             <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={staggerContainerVariants}
-              className="flex flex-col space-y-8"
-            >
-              {services.map((service, index) => (
-                <motion.div variants={fadeInVariants} key={index}>
-                  <ZivaraStyleCard
-                    icon={service.icon}
-                    title={service.title}
-                    content={service.description}
-                    bgColor="#dbeafe"
-                    iconColor="#1A73E8"
-                    features={service.features}
-                  />
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">{step.step}</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{step.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{step.description}</p>
                 </motion.div>
               ))}
-            </motion.div>
-          </Section>
-
-      <Section className="bg-gray-50 py-16 md:py-20 lg:py-24">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={fadeInVariants}
-          className="text-center max-w-4xl mx-auto"
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            چرا افغان کار را انتخاب کنید؟
-          </h2>
-          <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
-            ما با تیمی از متخصصان مجرب و تجربه‌ای طولانی در ارائه خدمات فناوری اطلاعات، 
-            راه‌حل‌های جامع و قابل اعتمادی را برای کسب و کارهای مختلف ارائه می‌دهیم.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
-            <div className="text-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl md:text-3xl mx-auto mb-4 shadow-lg">
-                🎯
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">تخصص و تجربه</h3>
-              <p className="text-gray-600 text-sm md:text-base">بیش از 5 سال تجربه در ارائه خدمات فناوری اطلاعات</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl md:text-3xl mx-auto mb-4 shadow-lg">
-                🚀
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">نوآوری و کیفیت</h3>
-              <p className="text-gray-600 text-sm md:text-base">استفاده از جدیدترین تکنولوژی‌ها و استانداردهای صنعت</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl md:text-3xl mx-auto mb-4 shadow-lg">
-                🤝
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">پشتیبانی 24/7</h3>
-              <p className="text-gray-600 text-sm md:text-base">پشتیبانی مداوم و پاسخگویی سریع به نیازهای شما</p>
-            </div>
           </div>
-          <Button variant="primary" size="lg" href="/contact">
-            شروع همکاری با ما
-          </Button>
-        </motion.div>
-      </Section>
-    </>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+              آماده شروع هستید؟
+          </h2>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+              بیایید در مورد پروژه شما صحبت کنیم و ببینیم چگونه می‌توانیم به زنده کردن دیدگاه شما کمک کنیم.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="group px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+                <span className="flex items-center justify-center">
+                  پروژه خود را شروع کنید
+                  <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </button>
+              <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 hover:-translate-y-1">
+                مشاوره برنامه‌ریزی کنید
+              </button>
+            </div>
+          </motion.div>
+              </div>
+      </section>
+          </div>
   )
 }
 
