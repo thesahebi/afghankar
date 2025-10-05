@@ -537,7 +537,7 @@ a:focus {
   scrollbar-color: var(--primary-color) var(--bg-secondary);
 }
 
-/* Header Specific Styles - Always Blue Background with White Text */
+/* Premium Header Styles - Apple/Linear/Notion Inspired */
 header {
   transition: all 0.5s ease !important;
   position: fixed !important;
@@ -546,62 +546,68 @@ header {
   right: 0 !important;
   z-index: 50 !important;
   width: 100% !important;
-  background-color: #2563eb !important; /* Always Blue-600 */
 }
 
-/* Mobile menu container - Always blue */
-header .lg\\:hidden {
-  background-color: #2563eb !important; /* Blue-600 */
+/* Backdrop blur support */
+header {
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
 }
 
-/* All header text should be white */
-header h1,
-header p,
-header a:not([href="/contact"]),
-header button,
-header nav a,
-header .space-y-2 a {
-  color: white !important;
+/* Premium typography */
+header h1 {
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
 }
 
-/* Navigation links hover - white text with subtle white background */
-header a:not([href="/contact"]):hover,
-header nav a:hover,
-header .space-y-2 a:hover {
-  color: white !important;
-  background-color: rgba(255, 255, 255, 0.1) !important;
+header nav a {
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
 }
 
-/* Active navigation links */
-header a:not([href="/contact"]).active,
-header nav a.active {
-  color: white !important;
-  background-color: rgba(255, 255, 255, 0.2) !important;
+/* Smooth hover transitions */
+header a,
+header button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-/* CTA Button - White background with blue text */
+/* Premium button styles */
 header a[href="/contact"] {
-  background-color: white !important;
-  color: #2563eb !important; /* Blue-600 */
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
 }
 
 header a[href="/contact"]:hover {
-  background-color: #f9fafb !important; /* Gray-50 */
-  color: #2563eb !important; /* Blue-600 */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+  transform: translateY(-1px) !important;
 }
 
-/* Mobile menu button */
-header button {
-  color: white !important;
+/* Mobile menu premium styling */
+header .lg\\:hidden {
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
 }
 
-header button:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+/* Enhanced focus states for accessibility */
+header a:focus,
+header button:focus {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px !important;
 }
 
-/* Mobile menu border */
-header .border-t {
-  border-color: rgba(255, 255, 255, 0.2) !important;
+/* Premium shadow effects */
+header.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+}
+
+/* Gradient backgrounds for premium feel */
+header .bg-gradient-to-r {
+  background-image: linear-gradient(to right, #2563eb, #1d4ed8) !important;
+}
+
+header .bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, #2563eb, #1d4ed8) !important;
 }
 
 /* Enhanced Accessibility */
