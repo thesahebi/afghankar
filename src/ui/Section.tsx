@@ -4,7 +4,7 @@ import Container from './Container'
 interface SectionProps {
   children: React.ReactNode
   className?: string
-  background?: 'white' | 'gray' | 'primary' | 'gradient'
+  background?: 'white' | 'primary' | 'gradient'
   padding?: 'sm' | 'md' | 'lg' | 'xl'
   id?: string
 }
@@ -18,9 +18,8 @@ const Section: React.FC<SectionProps> = ({
 }) => {
   const backgroundClasses = {
     white: 'bg-white',
-    gray: 'bg-white',
     primary: 'bg-primary text-white',
-    gradient: 'bg-gradient-to-br from-white to-gray-50'
+    gradient: 'bg-gradient-to-br from-white to-white'
   }
   
   const paddingClasses = {
