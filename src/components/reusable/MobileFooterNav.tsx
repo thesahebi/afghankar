@@ -55,7 +55,7 @@ const MobileFooterNav = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 lg:hidden md:hidden sm:block">
       {/* Main Container */}
-      <div className="bg-white/95 backdrop-blur-md border-t border-white">
+      <div className="bg-gray-900/95 backdrop-blur-md border-t border-gray-800">
         {/* Center Logo */}
         {/* <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
           <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg">
@@ -74,7 +74,7 @@ const MobileFooterNav = () => {
                 className={`flex flex-col items-center gap-1 group ${
                   location.pathname == item.path
                     ? "ubun-text font-bold"
-                    : "text-white"
+                    : "text-gray-400"
                 }`}
               >
                 {item.icon}

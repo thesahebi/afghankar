@@ -12,7 +12,7 @@ const TestimonialCard = ({
   return (
     <figure
       className={cn(
-        "relative w-96 cursor-pointer overflow-hidden rounded-xl  bg-white dark:bg-white shadow-sm p-5"
+        "relative w-96 cursor-pointer overflow-hidden rounded-xl  bg-white dark:bg-gray-800 shadow-sm p-5"
       )}
     >
       <div className="flex flex-row items-center gap-3">
@@ -35,7 +35,7 @@ export function Testimonial() {
     <section className="py-12 dark:bg-main-bg">
       <div className=" relative py-12 flex h-w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-transparent border-0 text-center">
         <div className="text-center">
-          <h2 className="lg:text-3xl md:text-2xl text-2xl font-bold text-white dark:text-white sm:text-4xl xl:text-5xl font-pj">
+          <h2 className="lg:text-3xl md:text-2xl text-2xl font-bold text-gray-900 dark:text-white sm:text-4xl xl:text-5xl font-pj">
             Client Reference and Testimonial
           </h2>
         </div>

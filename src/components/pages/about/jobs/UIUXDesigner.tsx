@@ -24,7 +24,7 @@ const UIUXDesigner: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Job Header */}
-            <div className="bg-[#0A0A0A] rounded-3xl shadow-lg border border-white overflow-hidden mb-10 md:mb-16">
+            <div className="bg-[#0A0A0A] rounded-3xl shadow-lg border border-gray-100 overflow-hidden mb-10 md:mb-16">
               <div className="p-8">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                   <div className="flex-1">
@@ -144,7 +144,7 @@ const UIUXDesigner: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-white">
+                <div className="mt-8 pt-6 border-t border-gray-100">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                     <div className="text-[#9ca3af] text-sm mb-4 sm:mb-0">
                       <span className="font-medium">Posted:</span> December 2024 • 
@@ -152,10 +152,10 @@ const UIUXDesigner: React.FC = () => {
                       <span className="font-medium ml-1">Type:</span> Full-time
                     </div>
                     <div className="flex space-x-3">
-                      <button className="px-4 py-2 text-[#6b7280] hover:text-[#1f2937] border border-white hover:border-white rounded-lg transition-colors duration-200">
+                      <button className="px-4 py-2 text-[#6b7280] hover:text-[#1f2937] border border-gray-200 hover:border-gray-300 rounded-lg transition-colors duration-200">
                         Save Job
                       </button>
-                      <button className="px-4 py-2 text-[#6b7280] hover:text-[#1f2937] border border-white hover:border-white rounded-lg transition-colors duration-200">
+                      <button className="px-4 py-2 text-[#6b7280] hover:text-[#1f2937] border border-gray-200 hover:border-gray-300 rounded-lg transition-colors duration-200">
                         Share
                       </button>
                     </div>

@@ -1,91 +1,104 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحه پیدا نشد - افغان کار</title>
-    <meta name="description" content="صفحه مورد نظر شما پیدا نشد. به صفحه اصلی افغان کار برگردید.">
+    <title>Page Not Found - Zivara Solutions</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Explore our IT solutions and services.">
+    <link rel="canonical" href="https://zivara.io/404">
     <style>
-        body {
-            font-family: 'Vazirmatn', 'Inter', 'Tahoma', 'Arial', sans-serif;
-            direction: rtl;
-            text-align: right;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #1A73E8 0%, #E3F2FD 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0A0A0A; 
+            color: #e7e7e7; 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
             justify-content: center;
-            color: #111827;
+            padding: 20px;
         }
-        .container {
-            text-align: center;
-            max-width: 600px;
-            padding: 2rem;
-            background: white;
-            border-radius: 1rem;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        .container { 
+            text-align: center; 
+            max-width: 600px; 
         }
-        h1 {
-            font-size: 4rem;
-            color: #1A73E8;
-            margin: 0;
-            font-weight: 700;
+        .error-code { 
+            font-size: 120px; 
+            font-weight: bold; 
+            color: #3b82f6; 
+            margin-bottom: 20px;
+            line-height: 1;
         }
-        h2 {
-            font-size: 1.5rem;
-            color: #6B7280;
-            margin: 1rem 0;
+        .error-title { 
+            font-size: 32px; 
+            margin-bottom: 16px; 
+            color: #e7e7e7;
         }
-        p {
-            font-size: 1.125rem;
-            color: #6B7280;
-            margin: 1.5rem 0;
+        .error-description { 
+            font-size: 18px; 
+            margin-bottom: 40px; 
+            opacity: 0.8;
             line-height: 1.6;
         }
-        .btn {
-            display: inline-block;
-            background: #1A73E8;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            margin: 0.5rem;
+        .cta-button { 
+            display: inline-block; 
+            background: #3b82f6; 
+            color: white; 
+            padding: 16px 32px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: 600;
+            transition: background 0.3s ease;
+            margin: 0 10px 20px;
         }
-        .btn:hover {
-            background: #1557B0;
-            transform: translateY(-2px);
+        .cta-button:hover { 
+            background: #2563eb; 
         }
-        .logo {
-            width: 60px;
-            height: 60px;
-            background: #1A73E8;
-            border-radius: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
+        .links { 
+            margin-top: 40px; 
+        }
+        .links a { 
+            color: #3b82f6; 
+            text-decoration: none; 
+            margin: 0 15px; 
+            transition: opacity 0.3s ease;
+        }
+        .links a:hover { 
+            opacity: 0.8; 
+        }
+        @media (max-width: 768px) {
+            .error-code { font-size: 80px; }
+            .error-title { font-size: 24px; }
+            .error-description { font-size: 16px; }
+            .cta-button { display: block; margin: 10px 0; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">اف</div>
-        <h1>404</h1>
-        <h2>صفحه پیدا نشد</h2>
-        <p>متأسفانه صفحه‌ای که به دنبال آن هستید وجود ندارد یا حذف شده است.</p>
-        <p>لطفاً آدرس را بررسی کنید یا از لینک‌های زیر استفاده کنید:</p>
-        <a href="/" class="btn">صفحه اصلی</a>
-        <a href="/services" class="btn">خدمات</a>
-        <a href="/contact" class="btn">تماس</a>
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-description">
+            Sorry, the page you're looking for doesn't exist or has been moved. 
+            Let's get you back on track with our IT solutions.
+        </p>
+        
+        <a href="/" class="cta-button">Go to Homepage</a>
+        <a href="/contact" class="cta-button">Contact Us</a>
+        
+        <div class="links">
+            <a href="/solutions/cloud">Cloud Solutions</a>
+            <a href="/solutions/virtualization">Virtualization</a>
+            <a href="/solutions/backup">Backup & Recovery</a>
+            <a href="/about">About Us</a>
+        </div>
     </div>
+    
+    <script>
+        // Auto-redirect after 10 seconds
+        setTimeout(function() {
+            window.location.href = '/';
+        }, 10000);
+    </script>
 </body>
 </html>
-
-

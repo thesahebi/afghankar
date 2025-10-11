@@ -13,7 +13,7 @@ const TeamCard: React.FC<TeamCardV2Props> = ({
 }) => {
   return (
     <>
-      <div className={` border   ${className} dark:bg-white`}>
+      <div className={` border   ${className} dark:bg-gray-800`}>
         
         <ImageFull src={profile} className={imgClass} alt={`${name}, ${job}`} />
         <div className=" pt-2 pb-3">

@@ -65,7 +65,7 @@ const FAQ: React.FC = () => {
               {activeIndex === index && (
                 <div 
                   id={`faq-answer-${index}`}
-                  className="p-4 bg-white text-white space-y-3"
+                  className="p-4 bg-gray-100 text-gray-700 space-y-3"
                   role="region"
                   aria-labelledby={`faq-question-${index}`}
                 >

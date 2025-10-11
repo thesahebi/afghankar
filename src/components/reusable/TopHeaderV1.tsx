@@ -307,7 +307,7 @@ const TopHeaderV1 = () => {
       {/* Submenu */}
           {/* {item.children && (
         <div
-          className="absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-white rounded-lg shadow-lg"
+          className="absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-gray-800 rounded-lg shadow-lg"
           onMouseEnter={(e) => e.currentTarget.classList.add("block")}
           onMouseLeave={(e) => e.currentTarget.classList.remove("block")}
         >
@@ -345,7 +345,7 @@ const TopHeaderV1 = () => {
 
           {/* Submenu (only if children exist)
       {item.children && (
-        <div className="absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-white rounded-lg shadow-lg">
+        <div className="absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-gray-800 rounded-lg shadow-lg">
           <ul className="py-2 w-48">
             {item.children.map((child) => (
               <li key={child.label}>

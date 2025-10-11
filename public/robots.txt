@@ -2,16 +2,21 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://angursweb01.z13.web.core.windows.net/sitemap.xml
+Sitemap: https://zivara.io/sitemap.xml
 
-# Disallow admin areas (if any)
+# Disallow admin and API areas
 Disallow: /admin/
-Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
 
-# Allow all other content
-Allow: /css/
-Allow: /js/
-Allow: /images/
-Allow: /assets/
+# Allow important pages
+Allow: /solutions/
+Allow: /about/
+Allow: /contact/
+Allow: /resources/
+Allow: /portfolio/
+Allow: /blogs/
 
-
+# Crawl delay (optional)
+Crawl-delay: 1

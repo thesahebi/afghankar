@@ -239,7 +239,7 @@ const ShowcasePage: React.FC = () => {
             {[
               { name: "React", icon: "⚛️", color: "from-blue-400 to-cyan-400" },
               { name: "TypeScript", icon: "🔷", color: "from-blue-500 to-blue-600" },
-              { name: "Next.js", icon: "▲", color: "from-white to-white" },
+              { name: "Next.js", icon: "▲", color: "from-gray-700 to-gray-900" },
               { name: "Tailwind", icon: "🎨", color: "from-cyan-400 to-blue-500" },
               { name: "Node.js", icon: "🟢", color: "from-green-500 to-green-600" },
               { name: "MongoDB", icon: "🍃", color: "from-green-600 to-green-700" },
@@ -247,7 +247,7 @@ const ShowcasePage: React.FC = () => {
               { name: "Docker", icon: "🐳", color: "from-blue-500 to-blue-600" },
               { name: "Figma", icon: "🎯", color: "from-purple-500 to-pink-500" },
               { name: "Git", icon: "📦", color: "from-orange-500 to-red-500" },
-              { name: "Vercel", icon: "▲", color: "from-white to-white" },
+              { name: "Vercel", icon: "▲", color: "from-gray-600 to-gray-800" },
               { name: "Framer", icon: "✨", color: "from-purple-400 to-pink-400" }
             ].map((tech, index) => (
               <motion.div

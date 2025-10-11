@@ -701,10 +701,10 @@ p {
 }
 
 /* Override common Tailwind classes */
-.bg-white { background-color: var(--color-background) !important; }
-.bg-white { background-color: var(--color-surface) !important; }
-.bg-white { background-color: var(--color-surface-light) !important; }
+.bg-gray-900 { background-color: var(--color-background) !important; }
+.bg-gray-800 { background-color: var(--color-surface) !important; }
+.bg-gray-700 { background-color: var(--color-surface-light) !important; }
 .text-white { color: var(--color-text-primary) !important; }
-.text-white { color: var(--color-text-secondary) !important; }
-.text-white { color: var(--color-text-tertiary) !important; }
-.text-white { color: var(--color-text-tertiary) !important; }
+.text-gray-300 { color: var(--color-text-secondary) !important; }
+.text-gray-400 { color: var(--color-text-tertiary) !important; }
+.text-gray-500 { color: var(--color-text-tertiary) !important; }

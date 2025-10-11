@@ -36,7 +36,7 @@ const Notification = ({
               {title}
             </span>
             {/* <span className="mx-1">·</span> */}
-            {/* <span className="text-xs text-white">{time}</span> */}
+            {/* <span className="text-xs text-gray-500">{time}</span> */}
           </figcaption>
           <p className="text-sm font-normal dark:text-white/60">{content}</p>
         </div>

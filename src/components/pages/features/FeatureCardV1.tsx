@@ -10,15 +10,15 @@ const FeatureCardV1: React.FC<FeatureModelProps> = ({
   iconColor
 }) => {
   return (
-    <div className={`${cardClass} text-center p-6 rounded-2xl transition-all duration-300 hover:shadow-lg h-full flex flex-col`}>
-      <div className="flex justify-center mb-4">
+    <div className={`${cardClass}   ...`}>
+      <div className="flex  justify-center">
         <div
-          className="h-32 w-32 rounded-full flex items-center justify-center"
+          className="h-32 w-32 rounded-full "
           style={{ backgroundColor: bgColor }}
         >
           {typeof Icon === "function" ? (
             <Icon
-              className="h-8 w-8"
+              className="relative top-12 left-12 h-8 w-8"
               style={{ color: iconColor }}
             />
           ) : (
@@ -26,10 +26,8 @@ const FeatureCardV1: React.FC<FeatureModelProps> = ({
           )}
         </div>
       </div>
-      <div className="flex flex-col flex-grow">
-        <h3 className="text-lg font-bold text-white dark:text-white mb-3">{title}</h3>
-        <p className="text-white text-sm leading-relaxed">{content}</p>
-      </div>
+      <p className="text-lg font-bold py-2">{title}</p>
+      <p className="px-5 dark:text-white text-sm">{content}</p>
     </div>
   );
 };

@@ -15,13 +15,13 @@ Card/section: #1E293B
 
 Headline text: #F1F5F9
 
-Body text: #28374bff
+Body text: #E2E8F0
 
 Muted text: #94A3B8
 
-Primary button: #0a2f69ff
+Primary button: #3B82F6
 
-Button hover: #a7b9e0ff
+Button hover: #2563EB
 
  /* logo */
 social-media-logos.html

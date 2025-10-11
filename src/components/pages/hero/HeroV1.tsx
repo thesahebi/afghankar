@@ -56,7 +56,7 @@ function HeroV1() {
 
             {/* <DockCom1/> */}
 
-            {/* <p className="mt-5 text-white">Already joined us? <a href="#" title="" className="text-black transition-all duration-200 hover:underline">Log in</a></p> */}
+            {/* <p className="mt-5 text-gray-600">Already joined us? <a href="#" title="" className="text-black transition-all duration-200 hover:underline">Log in</a></p> */}
           </div>
 
           <HeroRightSide heroImg={heroImg} />

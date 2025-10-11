@@ -54,7 +54,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       {/* Placeholder */}
       {!isLoaded && (
         <div 
-          className="absolute inset-0 bg-white animate-pulse"
+          className="absolute inset-0 bg-gray-200 animate-pulse"
           style={{ 
             backgroundImage: `url(${placeholder})`,
             backgroundSize: 'cover',

@@ -1,43 +1,28 @@
+// {
+//   "files": [],
+//   "references": [
+//     { "path": "./tsconfig.app.json" },
+//     { "path": "./tsconfig.node.json" }
+//   ]
+// }
+
+
 {
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-
-    /* Linting - Made less strict for build */
-    "strict": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": false
-  },
-  "include": [
-    "src/App.tsx",
-    "src/main.tsx",
-    "src/index.css",
-    "src/components/Header.tsx",
-    "src/components/Footer.tsx",
-    "src/components/ScrollToTop.tsx",
-    "src/pages/**/*",
-    "src/ui/**/*",
-    "src/lib/**/*"
-  ],
-  "exclude": [
-    "src/components/pages/**/*",
-    "src/components/reusable/**/*",
-    "src/components/seo/**/*",
-    "src/components/ShowcasePage.tsx",
-    "src/utils/**/*"
-  ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+   "noUnusedLocals": false,
+    "noUnusedParameters": false
+  }
 }

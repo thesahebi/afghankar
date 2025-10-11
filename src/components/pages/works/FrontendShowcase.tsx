@@ -17,8 +17,8 @@ const FrontendShowcase: React.FC<FrontendShowcaseProps> = ({
 
       <div className={`space-y-6 order-${orderContent} `}>
         <div className="space-y-4">
-          <p className="text-white text-lg tracking-wide dark:text-white">{title}</p>
-          <h1 className="lg:text-4xl  md:text-3xl  text-2xl font-bold text-white leading-tight dark:text-white">
+          <p className="text-gray-600 text-lg tracking-wide dark:text-gray-400">{title}</p>
+          <h1 className="lg:text-4xl  md:text-3xl  text-2xl font-bold text-gray-900 leading-tight dark:text-white">
             {description}
           </h1>
         
@@ -47,7 +47,7 @@ const FrontendShowcase: React.FC<FrontendShowcaseProps> = ({
           ))}
         </div> */}
 
-        <div className="flex items-center text-white hover:text-white transition-colors cursor-pointer group dark:text-white">
+        <div className="flex items-center text-gray-500 hover:text-gray-900 transition-colors cursor-pointer group dark:text-gray-400">
             <span className="mr-2">Learn more</span>
             <svg
               className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
