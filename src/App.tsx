@@ -18,6 +18,7 @@ import Virtualization from "./components/pages/solutions/virtualization";
 import Networking from "./components/pages/solutions/networking";
 import Cloud from "./components/pages/solutions/cloud";
 import DesignDevelopment from "./components/pages/solutions/DesignDevelopment";
+import Services from "./components/pages/Services";
 import AboutUs from "./components/pages/about/AboutUs";
 import Careers from "./components/pages/about/Careers";
 import UIUXDesigner from "./components/pages/about/jobs/UIUXDesigner";
@@ -49,6 +50,7 @@ function App() {
           <Routes>
           <Route path="/" element={<LayoutPage />}>
             <Route index element={<LandingPage />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/solutions/backup" element={<Backup />} />
             <Route path="/solutions/virtualization" element={<Virtualization />} />
             <Route path="/solutions/networking" element={<Networking />} />

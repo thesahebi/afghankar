@@ -54,39 +54,16 @@ const TopHeaderV1 = () => {
   }, [hoverTimeout]);
 
   const navigationItems = [
-    { path: "/", label: "Home" },
-    {
-      label: "Solutions",
-      children: [
-        { path: "/solutions/design-development", label: "Design & Development" },
-        { path: "/solutions/cloud", label: "Cloud" },
-        { path: "/solutions/virtualization", label: "Virtualization" },
-        { path: "/solutions/backup", label: "Backup" },
-        { path: "/solutions/networking", label: "Networking" },
-        {
-          label: "Automation",
-          children: [
-            { path: "/automation/devops", label: "DevOps" },
-            { path: "/automation/it", label: "IT" },
-          ]
-        },
-      ]
-    },
-    {
-      label: "Resources",
-      children: [
-        { path: "/resources/blog", label: "Blog" },
-        { path: "/resources/case-studies", label: "Case Studies" },
-      ]
-    },
+    { path: "/", label: "صفحه اصلی" },
+    { path: "/services", label: "Services" },
     {
       label: "About Us",
       children: [
-        { path: "/about", label: "About" },
+        { path: "/about", label: "درباره ما" },
         { path: "/about/careers", label: "Careers" },
       ]
     },
-    { path: "/contact", label: "Contact Us" }
+    { path: "/contact", label: "تماس با ما" }
   ];
 
 
@@ -99,9 +76,9 @@ const TopHeaderV1 = () => {
     // Create a calendar event URL
     const eventDetails = {
       action: 'TEMPLATE',
-      text: 'Zivara Consultation - Free Assessment',
+      text: 'Afghankar Consultation - Free Assessment',
       dates: '', // Will be filled by user
-      details: 'Free 30-minute consultation with Zivara experts to discuss your business needs and explore customized solutions.',
+      details: 'Free 30-minute consultation with Afghankar experts to discuss your business needs and explore customized solutions.',
       location: 'Online Meeting',
       trp: 'false'
     };
@@ -123,7 +100,7 @@ const TopHeaderV1 = () => {
               to="/"
               onClick={scrollToTheTopOfPage}
               className="flex items-center group transition-all duration-300 hover:scale-105"
-              aria-label="Zivara - Go to homepage"
+              aria-label="AfghanJob - Go to homepage"
             >
               <div className="relative">
                 <svg 
@@ -133,24 +110,27 @@ const TopHeaderV1 = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   className="transition-all duration-300 group-hover:scale-110"
                 >
-                  {/* Flowing connection lines */}
-                  <path d="M20 20 Q60 40 100 20" stroke="#3B82F6" strokeWidth="3" fill="none" strokeLinecap="round"/>
-                  <path d="M20 100 Q60 80 100 100" stroke="#3B82F6" strokeWidth="3" fill="none" strokeLinecap="round"/>
+                  <defs>
+                    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style={{stopColor:"#1E40AF", stopOpacity:1}} />
+                      <stop offset="100%" style={{stopColor:"#3B82F6", stopOpacity:1}} />
+                    </linearGradient>
+                  </defs>
                   
-                  {/* Main Z shape - bold and geometric */}
-                  <path d="M25 25 L95 25 L25 95 L95 95" stroke="#3B82F6" strokeWidth="8" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                  {/* Professional briefcase icon */}
+                  <rect x="40" y="50" width="40" height="30" rx="4" fill="url(#headerGradient)"/>
+                  <rect x="45" y="45" width="30" height="8" rx="2" fill="url(#headerGradient)"/>
+                  <rect x="47" y="47" width="26" height="4" rx="1" fill="#FFFFFF"/>
                   
-                  {/* Subtle flowing accent lines */}
-                  <path d="M30 30 Q60 50 90 30" stroke="#3B82F6" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.6"/>
-                  <path d="M30 90 Q60 70 90 90" stroke="#3B82F6" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.6"/>
+                  {/* Career ladder steps */}
+                  <rect x="50" y="60" width="20" height="3" fill="#FFFFFF" opacity="0.8"/>
+                  <rect x="50" y="65" width="20" height="3" fill="#FFFFFF" opacity="0.8"/>
+                  <rect x="50" y="70" width="20" height="3" fill="#FFFFFF" opacity="0.8"/>
                   
-                  {/* Connection dots */}
-                  <circle cx="25" cy="25" r="3" fill="#3B82F6"/>
-                  <circle cx="95" cy="25" r="3" fill="#3B82F6"/>
-                  <circle cx="25" cy="95" r="3" fill="#3B82F6"/>
-                  <circle cx="95" cy="95" r="3" fill="#3B82F6"/>
+                  {/* Growth arrow */}
+                  <path d="M60 35 L60 25 M55 30 L60 25 L65 30" stroke="url(#headerGradient)" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#3b82f6] to-[#8B5CF6] opacity-0 group-hover:opacity-20 rounded-full blur-sm transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#1E40AF] to-[#3B82F6] opacity-0 group-hover:opacity-20 rounded-full blur-sm transition-opacity duration-300"></div>
               </div>
             </Link>
           </div>

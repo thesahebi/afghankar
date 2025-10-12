@@ -81,26 +81,29 @@ const FooterV1 = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       className="transition-all duration-300 group-hover:scale-110"
                     >
-                      {/* Flowing connection lines */}
-                      <path d="M20 20 Q60 40 100 20" stroke="#3B82F6" strokeWidth="3" fill="none" strokeLinecap="round"/>
-                      <path d="M20 100 Q60 80 100 100" stroke="#3B82F6" strokeWidth="3" fill="none" strokeLinecap="round"/>
+                      <defs>
+                        <linearGradient id="footerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" style={{stopColor:"#1E40AF", stopOpacity:1}} />
+                          <stop offset="100%" style={{stopColor:"#3B82F6", stopOpacity:1}} />
+                        </linearGradient>
+                      </defs>
                       
-                      {/* Main Z shape - bold and geometric */}
-                      <path d="M25 25 L95 25 L25 95 L95 95" stroke="#3B82F6" strokeWidth="8" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                      {/* Professional briefcase icon */}
+                      <rect x="40" y="50" width="40" height="30" rx="4" fill="url(#footerGradient)"/>
+                      <rect x="45" y="45" width="30" height="8" rx="2" fill="url(#footerGradient)"/>
+                      <rect x="47" y="47" width="26" height="4" rx="1" fill="#FFFFFF"/>
                       
-                      {/* Subtle flowing accent lines */}
-                      <path d="M30 30 Q60 50 90 30" stroke="#3B82F6" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.6"/>
-                      <path d="M30 90 Q60 70 90 90" stroke="#3B82F6" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.6"/>
+                      {/* Career ladder steps */}
+                      <rect x="50" y="60" width="20" height="3" fill="#FFFFFF" opacity="0.8"/>
+                      <rect x="50" y="65" width="20" height="3" fill="#FFFFFF" opacity="0.8"/>
+                      <rect x="50" y="70" width="20" height="3" fill="#FFFFFF" opacity="0.8"/>
                       
-                      {/* Connection dots */}
-                      <circle cx="25" cy="25" r="3" fill="#3B82F6"/>
-                      <circle cx="95" cy="25" r="3" fill="#3B82F6"/>
-                      <circle cx="25" cy="95" r="3" fill="#3B82F6"/>
-                      <circle cx="95" cy="95" r="3" fill="#3B82F6"/>
+                      {/* Growth arrow */}
+                      <path d="M60 35 L60 25 M55 30 L60 25 L65 30" stroke="url(#footerGradient)" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                     <div className="ml-4 flex flex-col">
-                      <span className="text-xl sm:text-2xl font-bold text-[#e7e7e7] group-hover:text-white transition-colors duration-300 leading-tight">Zivara</span>
-                      <span className="text-lg sm:text-xl font-semibold text-[#e7e7e7] group-hover:text-white transition-colors duration-300 leading-tight">Solutions</span>
+                      <span className="text-xl sm:text-2xl font-bold text-[#e7e7e7] group-hover:text-white transition-colors duration-300 leading-tight">Afghan</span>
+                      <span className="text-lg sm:text-xl font-semibold text-[#e7e7e7] group-hover:text-white transition-colors duration-300 leading-tight">kar</span>
                     </div>
                   </div>
                 </div>
@@ -183,7 +186,7 @@ const FooterV1 = () => {
                 </li>
                 <li>
                   <Link
-                    to="/solutions/networking"
+                    to="/services"
                     className="group flex items-center text-[#e7e7e7] hover:text-[#e7e7e7] transition-colors duration-200"
                   >
                     <FaArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -249,10 +252,10 @@ const FooterV1 = () => {
                 <li className="flex items-start space-x-3">
                   <FaEnvelope className="w-5 h-5 text-[#3b82f6] mt-0.5 flex-shrink-0" />
                   <a
-                    href="mailto:support@zivara.io"
+                    href="mailto:support@afghankar.com"
                     className="text-[#e7e7e7] hover:text-[#e7e7e7] transition-colors duration-200"
                   >
-                    support@zivara.io
+                    support@afghankar.com
                   </a>
                 </li>
                 <li className="flex items-start space-x-3">
